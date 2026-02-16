@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarchOn Hero Demo</title>
+    <style>
+        /* Reset & Variables */
+        :root {
+            --font-body: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            --font-heading: "Noto Sans JP", sans-serif;
+            --color-black: #000;
+            --color-white: #fff;
+            --hero-height: 100vh;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-black);
+            overflow-x: hidden;
+        }
+
+        /* --- Header (Fade in/out logic) --- */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 64px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+            /* Initial state: hidden */
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-8px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .header.is-visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        /* Reduced Motion: Disable transition */
+        @media (prefers-reduced-motion: reduce) {
+            .header {
+                transition: none;
+            }
+        }
+
+        .header__logo {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .header__nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header__nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: var(--hero-height);
+            /* background-image removed */
+            overflow: hidden;
+        }
+
+        /* Hero Background Image System */
+        #heroBg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 0;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        /* Overlay */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Gradient overlay: Left(white mist) -> Right(clearer) */
+            background: linear-gradient(90deg,
+                    rgba(255, 255, 255, 0.75) 0%,
+                    rgba(255, 255, 255, 0.65) 40%,
+                    rgba(255, 255, 255, 0.15) 100%);
+            z-index: 1;
+            /* Overlay on top of image (z-index 0) */
+        }
+
+        .hero__content {
+            position: relative;
+            z-index: 2;
+            /* Content on top of overlay (z-index 1) */
+            width: 100%;
+            height: 100%;
+        }
+
+        /* (1) 左上見出し: 新規事業に */
+        .hero__title-top {
+            position: absolute;
+            top: 8vh;
+            left: 6vw;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--color-black);
+            line-height: 1.0;
+            letter-spacing: -0.02em;
+            /* Clamp: min 64px, pref 7.5vw, max 128px */
+            font-size: clamp(64px, 7.5vw, 128px);
+            white-space: nowrap;
+        }
+
+        /* (2) 中央左: 説明文 */
+        .hero__lead-group {
+            position: absolute;
+            top: 45vh;
+            left: 6vw;
+            /* Align with title-top */
+            font-weight: 600;
+            color: var(--color-black);
+            line-height: 1.6;
+            /* Clamp: min 16px, pref 2vw, max 26px */
+            font-size: clamp(16px, 2vw, 26px);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            /* 文字が見やすいように */
+        }
+
+        /* (3) 左下見出し: 確かな営業力を */
+        .hero__title-bottom {
+            position: absolute;
+            bottom: 8vh;
+            left: 8vw;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--color-black);
+            line-height: 1.0;
+            /* Clamp: min 72px, pref 9vw, max 160px */
+            font-size: clamp(72px, 9vw, 160px);
+            white-space: nowrap;
+        }
+
+        /* --- Animations --- */
+        /* ... existing animation styles ... */
+        /* Block Reveal Base */
+        .reveal-block {
+            position: relative;
+            display: inline-block;
+            color: transparent;
+            /* Text hidden initially */
+        }
+
+        .reveal-block::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: #000;
+            /* Black block */
+            z-index: 1;
+        }
+
+        /* Animation States */
+        .reveal-block.is-animating {
+            animation: textAppear 0s 0.45s forwards;
+            /* Block covers -> text appears */
+        }
+
+        .reveal-block.is-animating::after {
+            animation: blockSlide 0.9s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        }
+
+        @keyframes blockSlide {
+            0% {
+                width: 0%;
+                left: 0;
+            }
+
+            50% {
+                width: 100%;
+                left: 0;
+            }
+
+            100% {
+                width: 0%;
+                left: 100%;
+            }
+        }
+
+        @keyframes textAppear {
+            to {
+                color: var(--color-black);
+            }
+        }
+
+        /* Typewriter Cursor */
+        .typewriter-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.2em;
+            background-color: var(--color-black);
+            margin-left: 2px;
+            vertical-align: sub;
+            opacity: 0;
+            /* Initially hidden */
+        }
+
+        .typewriter-cursor.is-active {
+            opacity: 1;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-block {
+                color: var(--color-black) !important;
+                animation: none !important;
+            }
+
+            .reveal-block::after {
+                display: none;
+            }
+
+            .typewriter-cursor {
+                display: none;
+            }
+        }
+
+        /* SP Adjustments */
+        @media (max-width: 768px) {
+            .hero__title-top {
+                top: 12vh;
+                left: 5vw;
+                font-size: clamp(40px, 12vw, 64px);
+            }
+
+            .hero__lead-group {
+                top: 40vh;
+                left: 5vw;
+                font-size: 14px;
+                line-height: 1.5;
+            }
+
+            .hero__title-bottom {
+                bottom: 15vh;
+                left: 5vw;
+                font-size: clamp(48px, 14vw, 80px);
+            }
+
+            .header {
+                padding: 0 20px;
+            }
+
+            .header__nav {
+                display: none;
+            }
+
+            /* Simplified for demo */
+        }
+
+        /* Dummy content for scrolling */
+        .scroll-content {
+            height: 200vh;
+            background: #f5f5f5;
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header (Initially hidden by CSS, controlled by JS) -->
+    <header class="header" id="site-header">
+        <div class="header__logo">MarchOn</div>
+        <nav class="header__nav">
+            <a href="#">MarchOnとは</a>
+            <a href="#">支援内容</a>
+            <a href="#">事例</a>
+            <a href="#">お問い合わせ</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero-section">
+        <!-- Background Image with fallback -->
+        <img id="heroBg" src="images/hero-bg-v3.png" alt="" />
+
+        <div class="hero__content">
+
+            <!-- (1) Top Title -->
+            <h1 class="hero__title-top">
+                <span class="reveal-block" id="reveal-1">新規事業に</span>
+            </h1>
+
+            <!-- (2) Lead Text (Typewriter) -->
+            <p class="hero__lead-group">
+                <span id="typewriter-text"></span><span class="typewriter-cursor" id="cursor"></span>
+            </p>
+
+            <!-- (3) Bottom Title -->
+            <h2 class="hero__title-bottom">
+                <span class="reveal-block" id="reveal-2">確かな営業力を。</span>
+            </h2>
+
+        </div>
+    </section>
+
+    <!-- Content for scrolling -->
+    <div class="scroll-content">
+        <h3>Scroll down to see header appear</h3>
+        <p>スクロールするとヘッダーが表示されます。</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Image Fallback Logic ---
+            const heroBg = document.getElementById('heroBg');
+            if (heroBg) {
+                const fallbacks = [
+                    "images/hero-bg-v3.png",
+                    "images/hero-bg-v2.png",
+                    "images/@TOP%E3%83%9A%E3%83%BC%E3%82%B8%EF%BC%88%E8%83%8C%E6%99%AF%E7%94%BB%E5%83%8F%EF%BC%89.png",
+                    "./@TOP%E3%83%9A%E3%83%BC%E3%82%B8%EF%BC%88%E8%83%8C%E6%99%AF%E7%94%BB%E5%83%8F%EF%BC%89.png",
+                    "/@TOP%E3%83%9A%E3%83%BC%E3%82%B8%EF%BC%88%E8%83%8C%E6%99%AF%E7%94%BB%E5%83%8F%EF%BC%89.png",
+                    "assets/@TOP%E3%83%9A%E3%83%BC%E3%82%B8%EF%BC%88%E8%83%8C%E6%99%AF%E7%94%BB%E5%83%8F%EF%BC%89.png",
+                    "images/hero-bg-final.png"
+                ];
+                let fallbackIndex = 0;
+
+                heroBg.onerror = function () {
+                    if (fallbackIndex < fallbacks.length) {
+                        // Try next path
+                        console.log('Image load failed, trying:', fallbacks[fallbackIndex]);
+                        this.src = fallbacks[fallbackIndex];
+                        fallbackIndex++;
+                    } else {
+                        console.warn('背景画像のパスを要確認: 全てのフォールバックで読み込み失敗');
+                    }
+                };
+            }
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (!prefersReducedMotion) {
+                // (1) Block Reveal 1: "新規事業に" (0.1s delay)
+                setTimeout(() => {
+                    document.getElementById('reveal-1').classList.add('is-animating');
+                }, 100);
+
+                // (2) Block Reveal 2: "確かな営業力を。" (0.5s delay from 1st start -> 0.6s total)
+                setTimeout(() => {
+                    document.getElementById('reveal-2').classList.add('is-animating');
+                }, 600);
+
+                // (3) Typewriter: Lead Text (Start around 0.5s, when 1st block is halfway)
+                setTimeout(startTypewriter, 500);
+            } else {
+                // Instant show for reduced motion
+                document.getElementById('typewriter-text').innerHTML =
+                    '新規事業開発支援のアルファドライブから生まれた営業支援組織。<br>戦略立案から実行・定着まで、事業フェーズに応じて伴走。';
+            }
+
+            function startTypewriter() {
+                const text1 = '新規事業開発支援のアルファドライブから生まれた営業支援組織。';
+                const text2 = '戦略立案から実行・定着まで、事業フェーズに応じて伴走。';
+                const target = document.getElementById('typewriter-text');
+                const cursor = document.getElementById('cursor');
+
+                cursor.classList.add('is-active');
+
+                let i = 0;
+                function typeLine1() {
+                    if (i < text1.length) {
+                        target.innerHTML = text1.slice(0, i + 1);
+                        i++;
+                        setTimeout(typeLine1, 20 + Math.random() * 10); // 20-30ms random
+                    } else {
+                        // Line 1 done, wait then break line
+                        setTimeout(() => {
+                            target.innerHTML += '<br>';
+                            i = 0;
+                            typeLine2();
+                        }, 300);
+                    }
+                }
+
+                function typeLine2() {
+                    if (i < text2.length) {
+                        target.innerHTML = text1 + '<br>' + text2.slice(0, i + 1);
+                        i++;
+                        setTimeout(typeLine2, 20 + Math.random() * 10);
+                    } else {
+                        // Done. Cursor blinks for a while then disappears? (User said: blink then disappear)
+                        setTimeout(() => {
+                            cursor.style.display = 'none';
+                        }, 3000);
+                    }
+                }
+
+                typeLine1();
+            }
+
+            // --- 2. Header Control (IntersectionObserver & Timer) ---
+            const header = document.getElementById('site-header');
+            const hero = document.getElementById('hero-section');
+
+            if (hero && header) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        console.log('Observer entry:', entry.isIntersecting);
+                        if (!entry.isIntersecting) {
+                            console.log('Header shown by Observer');
+                            header.classList.add('is-visible');
+                        }
+                        // Once visible, stays visible
+                    });
+                }, {
+                    threshold: 0,
+                    // rootMargin: '-100px 0px 0px 0px' // Adjust if needed to trigger earlier
+                });
+
+                observer.observe(hero);
+
+                // Timer to show header after animation (approx 3.5s)
+                const delay = prefersReducedMotion ? 500 : 3500;
+                console.log('Timer delay set to:', delay);
+                setTimeout(() => {
+                    console.log('Header shown by Timer');
+                    header.classList.add('is-visible');
+                }, delay);
+            }
+        });
+    </script>
+</body>
+
+</html>
