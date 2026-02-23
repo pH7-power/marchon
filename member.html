@@ -66,42 +66,58 @@
     <section class="section">
         <div class="container">
             <div class="section__header fade-in">
-                <div class="section__label">Leadership</div>
-                <h2 class="section__title">経営メンバー</h2>
+                <h2 class="section__title section__title--center">経営メンバー</h2>
             </div>
 
             <div class="grid grid--2">
-                <div class="member-card fade-in"
-                    style="text-align: left; display: grid; grid-template-columns: 160px 1fr; gap: var(--space-xl); padding: var(--space-2xl);">
-                    <div>
-                        <div class="member-card__photo">👤</div>
+                <button class="member-card member-card--horizontal js-accordion-trigger fade-in" aria-expanded="false">
+                    <div class="member-card__main">
+                        <div class="member-card__photo">
+                            <img src="images/中山健彦.png" alt="中山 健彦" loading="lazy">
+                        </div>
+                        <div class="member-card__info">
+                            <span class="member-card__role">代表取締役 CEO</span>
+                            <h3 class="member-card__name">中山 健彦</h3>
+                            <p class="member-card__catchphrase">連続起業家<br>ファンドへのEXIT経験</p>
+                            <span class="member-card__more">詳しく見る <svg width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg></span>
+                        </div>
                     </div>
-                    <div>
-                        <span class="member-card__role">代表取締役 CEO</span>
-                        <h3 class="member-card__name" style="margin-top: var(--space-sm);">中山 健彦</h3>
-                        <p class="member-card__name-en">Takehiko Nakayama</p>
-                        <p class="member-card__text">
-                            <!-- 制作メモ：経歴詳細は公式HPに記載なし。要確認。 -->
-                            株式会社MarchOn 代表取締役。新規事業領域における営業支援のプロフェッショナルとして、MarchOnの設立から経営全般を担う。
-                        </p>
+                    <div class="member-card__details" aria-hidden="true">
+                        <div class="member-card__details-inner">
+                            <h4 class="member-card__details-title">得意領域</h4>
+                            <p class="member-card__text">#アクセラレーション #経営 #起業 #EXIT #SaaS #情報通信 #メーカー
+                                #金融<br><br>これまで2社スタートアップを創設し、2社ともM＆AによるExitを果たした連続起業家。DX支援会社における営業部門の責任者として、各業界のリーディングカンパニーのDXを支援した後、自らが代表取締役を務めるスタートアップ企業を創設。100社を超える企業に積極的にPoV、PoCを展開し、市場の状況に応じたピボットを行うなど複数事業の検証を行った結果、4年間で約500社、1,000サイト以上に自社ソリューションが導入され、これらの成功により国内PEファンドにM＆Aで売却。複数事業の0→1、1→10をリードし収益化を実現した経験を活かし、新規事業プロジェクトの支援に従事する。
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </button>
 
-                <div class="member-card fade-in"
-                    style="text-align: left; display: grid; grid-template-columns: 160px 1fr; gap: var(--space-xl); padding: var(--space-2xl);">
-                    <div>
-                        <div class="member-card__photo">👤</div>
+                <button class="member-card member-card--horizontal js-accordion-trigger fade-in" aria-expanded="false">
+                    <div class="member-card__main">
+                        <div class="member-card__photo">
+                            <img src="images/岩崎達也.png" alt="岩﨑 達也" loading="lazy">
+                        </div>
+                        <div class="member-card__info">
+                            <span class="member-card__role">取締役 COO</span>
+                            <h3 class="member-card__name">岩﨑 達也</h3>
+                            <p class="member-card__catchphrase">企業内新規事業立ち上げ<br>公募型社内新規事業採択者</p>
+                            <span class="member-card__more">詳しく見る <svg width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg></span>
+                        </div>
                     </div>
-                    <div>
-                        <span class="member-card__role">取締役 COO</span>
-                        <h3 class="member-card__name" style="margin-top: var(--space-sm);">岩﨑 達也</h3>
-                        <p class="member-card__name-en">Tatsuya Iwasaki</p>
-                        <p class="member-card__text">
-                            <!-- 制作メモ：経歴詳細は公式HPに記載なし。要確認。 -->
-                            株式会社MarchOn 取締役。事業運営と支援プロジェクトの統括を担い、クライアントの事業成長に向き合う。
-                        </p>
+                    <div class="member-card__details" aria-hidden="true">
+                        <div class="member-card__details-inner">
+                            <h4 class="member-card__details-title">得意領域</h4>
+                            <p class="member-card__text">#社内新規事業 #プロトタイピング #IT #物流
+                                #メーカー<br><br>企業内での新規事業立ち上げ経験を持ち、公募型の社内新規事業制度でも採択された実績を有す。事業運営とプロジェクト統括のスペシャリストとして伴走。</p>
+                        </div>
                     </div>
-                </div>
+                </button>
             </div>
         </div>
     </section>
@@ -110,54 +126,94 @@
     <section class="section section--alt">
         <div class="container">
             <div class="section__header fade-in">
-                <div class="section__label">Sales Team</div>
-                <h2 class="section__title">セールスメンバー</h2>
-                <p class="section__subtitle">事業会社やアルファドライブでの新規事業経験を持つメンバーが、プロジェクトをリードします。</p>
+                <h2 class="section__title section__title--center">セールスメンバー</h2>
+                <p class="section__subtitle section__subtitle--center">事業会社やアルファドライブでの新規事業経験を持つメンバーが、プロジェクトをリードします。</p>
             </div>
 
-            <div class="member-grid">
-                <div class="member-card fade-in">
-                    <div class="member-card__photo">👤</div>
-                    <span class="member-card__role">Sales Director</span>
-                    <h3 class="member-card__name">芳岡 あゆみ</h3>
-                    <p class="member-card__name-en">Ayumi Yoshioka</p>
-                    <p class="member-card__text">
-                        <!-- 制作メモ：経歴詳細は公式HPに記載なし。要確認。 -->
-                    </p>
-                </div>
+            <div class="member-grid member-grid--3">
+                <button class="member-card member-card--vertical js-accordion-trigger fade-in" aria-expanded="false">
+                    <div class="member-card__main">
+                        <div class="member-card__photo">
+                            <img src="images/芳岡あゆみ.png" alt="芳岡 あゆみ" loading="lazy">
+                        </div>
+                        <div class="member-card__info">
+                            <span class="member-card__role">Sales Director</span>
+                            <h3 class="member-card__name">芳岡 あゆみ</h3>
+                            <p class="member-card__catchphrase">スタートアップ企業支援<br>組織人事 / M＆A / 投資ハンズオン支援</p>
+                            <span class="member-card__more">詳しく見る <svg width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg></span>
+                        </div>
+                    </div>
+                    <div class="member-card__details" aria-hidden="true">
+                        <div class="member-card__details-inner">
+                            <h4 class="member-card__details-title">得意領域</h4>
+                            <p class="member-card__text">#セールス #SaaS事業開発
+                                #組織人事<br><br>豊富な現場経験に基づく実践的な営業推進に加え、スタートアップ企業に対する多角的なハンズオン支援に強みを持つ。</p>
+                        </div>
+                    </div>
+                </button>
 
-                <div class="member-card fade-in">
-                    <div class="member-card__photo">👤</div>
-                    <span class="member-card__role">Sales Director</span>
-                    <h3 class="member-card__name">宮本 恵太郎</h3>
-                    <p class="member-card__name-en">Keitaro Miyamoto</p>
-                    <p class="member-card__text">
-                        <!-- 制作メモ：経歴詳細は公式HPに記載なし。要確認。 -->
-                    </p>
-                </div>
+                <button class="member-card member-card--vertical js-accordion-trigger fade-in" aria-expanded="false">
+                    <div class="member-card__main">
+                        <div class="member-card__photo">
+                            <img src="images/宮本恵太郎.png" alt="宮本 恵太郎" loading="lazy">
+                        </div>
+                        <div class="member-card__info">
+                            <span class="member-card__role">Sales Director</span>
+                            <h3 class="member-card__name">宮本 恵太郎</h3>
+                            <p class="member-card__catchphrase">ゼロから売れる営業を創る。</p>
+                            <span class="member-card__more">詳しく見る <svg width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg></span>
+                        </div>
+                    </div>
+                    <div class="member-card__details" aria-hidden="true">
+                        <div class="member-card__details-inner">
+                            <h4 class="member-card__details-title">得意領域</h4>
+                            <p class="member-card__text">#インサイドセールス構築
+                                #BtoB新規開拓<br><br>データ起点の戦略構築と、泥臭い実行力を武器に新規事業のセールスプロセスをゼロから確立する。</p>
+                        </div>
+                    </div>
+                </button>
 
-                <div class="member-card fade-in">
-                    <div class="member-card__photo">👤</div>
-                    <span class="member-card__role">Sales Director</span>
-                    <h3 class="member-card__name">北渡瀬 敦</h3>
-                    <p class="member-card__name-en">Atsushi Kitawatase</p>
-                    <p class="member-card__text">
-                        <!-- 制作メモ：経歴詳細は公式HPに記載なし。要確認。 -->
-                    </p>
-                </div>
+                <button class="member-card member-card--vertical js-accordion-trigger fade-in" aria-expanded="false">
+                    <div class="member-card__main">
+                        <div class="member-card__photo">
+                            <img src="images/北渡瀬敦.png" alt="北渡瀬 敦" loading="lazy">
+                        </div>
+                        <div class="member-card__info">
+                            <span class="member-card__role">Sales Director</span>
+                            <h3 class="member-card__name">北渡瀬 敦</h3>
+                            <p class="member-card__catchphrase">学生時代にマレーシアで起業<br>大手人材会社で新規事業複数経験</p>
+                            <span class="member-card__more">詳しく見る <svg width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg></span>
+                        </div>
+                    </div>
+                    <div class="member-card__details" aria-hidden="true">
+                        <div class="member-card__details-inner">
+                            <h4 class="member-card__details-title">得意領域</h4>
+                            <p class="member-card__text">#アクセラレーション #1→10のセールス戦略 #社内新規事業 #起業 #人材 #IT #プラント
+                                #小売<br><br>エンタープライズ向けの堅牢な提案営業力と、自身での起業・新規事業立ち上げ経験の双方向から伴走を行う。</p>
+                        </div>
+                    </div>
+                </button>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <section class="cta-section">
-        <div class="container">
-            <h2 class="cta-section__title">まずはお気軽にご相談ください</h2>
-            <p class="cta-section__text">私たちのチームが、貴社の事業成長に真剣に向き合います。</p>
-            <div class="btn-group">
-                <a href="contact.html" class="btn btn--white btn--lg">無料相談</a>
-
-            </div>
+    <section class="cta-final animate-on-scroll-custom" id="cta">
+        <div class="cta-final__inner">
+            <h2 class="cta-final__title">まずはお気軽にご相談ください</h2>
+            <p class="cta-final__text">
+                新規事業の営業に関するお悩みやご相談を、<br>私たちにお聞かせください。
+            </p>
+            <a href="contact.html" class="cta-final__btn" data-gtm-event="cta_bottom_free_consultation">無料相談</a>
         </div>
     </section>
     </main>

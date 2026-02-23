@@ -9,6 +9,7 @@ const init = () => {
   initSmoothScroll();
   initHeroAnimations();
   initStrengthTabs();
+  initVisionAnimations();
 };
 
 if (document.readyState === 'loading') {
@@ -185,7 +186,7 @@ function initMobileMenu() {
 /* --- Scroll Animations (IntersectionObserver) --- */
 function initScrollAnimations() {
   // .animate-on-scroll (新) と .fade-in (旧) の両方を監視
-  const elements = document.querySelectorAll('.animate-on-scroll, .fade-in');
+  const elements = document.querySelectorAll('.animate-on-scroll, .fade-in, .animate-on-scroll-custom');
   console.log('initScrollAnimations: found', elements.length, 'elements');
   if (!elements.length) return;
 
@@ -312,14 +313,13 @@ function getFooterHTML() {
 /* --- Reusable: CTA Section HTML --- */
 function getCTASectionHTML() {
   return `
-    <section class="cta-section">
-      <div class="container">
-        <h2 class="cta-section__title">まずはお気軽にご相談ください</h2>
-        <p class="cta-section__text">新規事業の営業に関するお悩みやご相談を、<br>私たちにお聞かせください。</p>
-        <div class="btn-group">
-          <a href="contact.html" class="btn btn--white btn--lg" data-gtm-event="cta_section_free_consultation">無料相談</a>
-          <a href="contact.html" class="btn btn--outline btn--lg" style="border-color: rgba(255,255,255,0.5); color: #fff;" data-gtm-event="cta_section_meeting">事業説明面談はこちら</a>
-        </div>
+    <section class="cta-final animate-on-scroll-custom" id="cta">
+      <div class="cta-final__inner">
+        <h2 class="cta-final__title">まずはお気軽にご相談ください</h2>
+        <p class="cta-final__text">
+          新規事業の営業に関するお悩みやご相談を、<br>私たちにお聞かせください。
+        </p>
+        <a href="contact.html" class="cta-final__btn" data-gtm-event="cta_bottom_free_consultation">無料相談</a>
       </div>
     </section>
   `;
@@ -352,6 +352,154 @@ function initStrengthTabs() {
       const targetPanel = document.getElementById(targetId);
       if (targetPanel) {
         targetPanel.classList.add('active');
+      }
+    });
+  });
+}
+
+/* --- Vision Page Animations (New) --- */
+function initVisionAnimations() {
+  const visionHero = document.querySelector('.vision-hero');
+  const visionTitle = document.getElementById('visionHeroTitle');
+  const visionBodyContent = document.getElementById('visionBodyContent');
+
+  if (!visionHero || !visionTitle) return;
+
+  // Scroll effect for sticky hero title
+  window.addEventListener('scroll', () => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const rect = visionHero.getBoundingClientRect();
+    const stickyContainer = visionHero.querySelector('.vision-hero__sticky');
+    if (!stickyContainer) return;
+
+    // The total distance the container can scroll while sticky
+    const heroHeight = rect.height - stickyContainer.offsetHeight;
+    if (heroHeight <= 0) return;
+
+    // Calculate progress between 0 (top of hero) and 1 (bottom of hero scrollable area)
+    let progress = -rect.top / heroHeight;
+    progress = Math.max(0, Math.min(1, progress));
+
+    // Scale 1.0 -> 0.72
+    const scale = 1.0 - (0.28 * Math.pow(progress, 0.8)); // slightly ease the visual output
+    // TranslateY 0 -> -80px
+    const translateY = -80 * progress;
+
+    visionTitle.style.transform = `translateY(${translateY}px) scale(${scale})`;
+  }, { passive: true });
+
+  // Vision body: in/out で is-visible をトグル（出現: 小→大 / 消える: 大→小）
+  const visionBodyContentEl = document.getElementById("visionBodyContent");
+  if (visionBodyContentEl) {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      visionBodyContentEl.classList.add("is-visible");
+    } else {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+            } else {
+              entry.target.classList.remove("is-visible");
+            }
+          });
+        },
+        {
+          threshold: 0.25,
+          rootMargin: "0px 0px -10% 0px",
+        }
+      );
+      io.observe(visionBodyContentEl);
+    }
+  }
+
+  // Intersection Observer for grid overlay
+  const visionGrid = document.getElementById('visionGrid');
+  const visionBody = document.querySelector('.vision-body');
+  if (visionBody && visionGrid) {
+    const gridObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          visionGrid.classList.add('is-visible');
+        } else if (entry.boundingClientRect.top > window.innerHeight * 0.5) {
+          // Hide only if scrolled back to top
+          visionGrid.classList.remove('is-visible');
+        }
+      });
+    }, {
+      threshold: 0,
+      rootMargin: '0px 0px -20% 0px'
+    });
+    gridObserver.observe(visionBody);
+  }
+}
+
+// Observe value panels for fade-in effect on Values page
+function initValuePanels() {
+  const valuePanels = document.querySelectorAll('.value-panel__inner');
+  if (!valuePanels.length) return;
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) {
+    valuePanels.forEach(panel => panel.classList.add('is-visible'));
+    return;
+  }
+
+  const panelObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        // Once visible, leave it that way for sticky stack
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  valuePanels.forEach(panel => panelObserver.observe(panel));
+}
+
+// Initialize value panels if on values page
+document.addEventListener('DOMContentLoaded', () => {
+  initValuePanels();
+  initMemberAccordion();
+});
+
+// Member Page Accordion Logic
+function initMemberAccordion() {
+  const accordionTriggers = document.querySelectorAll('.js-accordion-trigger');
+  if (!accordionTriggers.length) return;
+
+  accordionTriggers.forEach(trigger => {
+    trigger.addEventListener('click', function (e) {
+      // Prevent triggering if clicked on a link inside the card (though none exist currently)
+      if (e.target.closest('a')) return;
+
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+      // Close all other open accordions in the same grid/group
+      const parentGrid = this.closest('.grid') || this.closest('.member-grid');
+      if (parentGrid) {
+        const otherOpenTriggers = parentGrid.querySelectorAll('.js-accordion-trigger[aria-expanded="true"]');
+        otherOpenTriggers.forEach(otherTrigger => {
+          if (otherTrigger !== this) {
+            otherTrigger.setAttribute('aria-expanded', 'false');
+            const otherDetails = otherTrigger.querySelector('.member-card__details');
+            if (otherDetails) {
+              otherDetails.setAttribute('aria-hidden', 'true');
+            }
+          }
+        });
+      }
+
+      // Toggle current accordion
+      this.setAttribute('aria-expanded', !isExpanded);
+      const details = this.querySelector('.member-card__details');
+      if (details) {
+        details.setAttribute('aria-hidden', isExpanded ? 'true' : 'false');
       }
     });
   });
