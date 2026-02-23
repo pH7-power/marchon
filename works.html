@@ -16,8 +16,12 @@
         <div class="header__inner">
             <a href="index.html" class="header__logo"><img src="images/header-logo-new.png" alt="MarchOn"></a>
             <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
-                <a href="index.html" class="header__nav-link">TOP</a>
-                <a href="about.html" class="header__nav-link">MarchOnとは</a>
+                <div class="header__nav-item"><a href="about.html" class="header__nav-link">MarchOnとは</a>
+                    <div class="header__dropdown">
+                        <a href="vision.html" class="header__dropdown-link">Vision</a>
+                        <a href="value.html" class="header__dropdown-link">Value</a>
+                    </div>
+                </div>
                 <a href="service.html" class="header__nav-link">支援内容</a>
                 <a href="works.html" class="header__nav-link header__nav-link--active">事例</a>
                 <a href="member.html" class="header__nav-link">メンバー</a>
@@ -25,142 +29,151 @@
                 <a href="company.html" class="header__nav-link">会社概要</a>
                 <a href="contact.html" class="header__nav-link">お問い合わせ</a>
             </nav>
-            <div class="header__cta"><a href="contact.html" class="btn btn--primary btn--sm">無料相談</a></div>
-            <button class="header__mobile-toggle" aria-label="メニューを開く"
-                aria-expanded="false"><span></span><span></span><span></span></button>
+            <button class="header__mobile-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-nav">
+                <span class="header__mobile-toggle-bar"></span>
+                <span class="header__mobile-toggle-bar"></span>
+                <span class="header__mobile-toggle-bar"></span>
+            </button>
         </div>
     </header>
-    <nav class="mobile-nav" role="navigation" aria-label="モバイルナビゲーション">
-        <a href="index.html" class="mobile-nav__link">TOP</a><a href="about.html"
-            class="mobile-nav__link">MarchOnとは</a><a href="service.html" class="mobile-nav__link">支援内容</a><a
-            href="works.html" class="mobile-nav__link">事例</a><a href="member.html" class="mobile-nav__link">メンバー</a><a
-            href="event.html" class="mobile-nav__link">イベント</a><a href="company.html"
-            class="mobile-nav__link">会社概要</a><a href="contact.html" class="mobile-nav__link">お問い合わせ</a>
-        <div class="mobile-nav__cta"><a href="contact.html" class="btn btn--primary btn--full">無料相談</a></div>
+
+    <nav class="mobile-nav" aria-label="モバイルナビゲーション" id="mobile-nav">
+        <div class="mobile-nav__inner">
+            <div class="mobile-nav__item">
+                <a href="about.html" class="mobile-nav__link mobile-nav__link--has-sub">MarchOnとは</a>
+                <div class="mobile-nav__dropdown">
+                    <a href="vision.html" class="mobile-nav__dropdown-link">Vision</a>
+                    <a href="value.html" class="mobile-nav__dropdown-link">Value</a>
+                </div>
+            </div>
+            <a href="service.html" class="mobile-nav__link">支援内容</a>
+            <a href="works.html" class="mobile-nav__link">事例</a>
+            <a href="member.html" class="mobile-nav__link">メンバー</a>
+            <a href="event.html" class="mobile-nav__link">イベント</a>
+            <a href="company.html" class="mobile-nav__link">会社概要</a>
+            <a href="contact.html" class="mobile-nav__link">お問い合わせ</a>
+        </div>
     </nav>
 
-    <main>
-        <div class="page-header">
-            <div class="container">
-                <div class="page-header__label">Works</div>
-                <h1 class="page-header__title">ご支援実績</h1>
-                <p class="page-header__description">さまざまな業界・事業フェーズでのご支援実績をご紹介します。</p>
+    <div class="page-header">
+        <div class="container text-center">
+
+            <h1 class="page-header__title">ご支援実績</h1>
+            <p class="page-header__description">さまざまな業界・事業フェーズでのご支援実績をご紹介します。</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="works-grid">
+                <a href="works/case-01.html" class="work-card fade-in" data-gtm-event="works_detail_click">
+                    <div class="work-card__image">
+                        <img src="images/works-01.png" alt="大手金融子会社様"
+                            style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="work-card__body">
+                        <span class="work-card__tag">金融</span>
+                        <h3 class="work-card__title">大手金融子会社様：新規ファイナンス系事業初期営業戦略・商談獲得支援</h3>
+                        <p class="work-card__desc">営業戦略策定から商談獲得までを一貫支援</p>
+                    </div>
+                </a>
+                <a href="works/case-02.html" class="work-card fade-in" data-gtm-event="works_detail_click">
+                    <div class="work-card__image">
+                        <img src="images/works-02.png" alt="大手建設会社様" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="work-card__body">
+                        <span class="work-card__tag">建設</span>
+                        <h3 class="work-card__title">大手建設会社様：福利厚生系サービスtoBヒアリング先開拓支援</h3>
+                        <p class="work-card__desc">toBヒアリング先の開拓をご支援</p>
+                    </div>
+                </a>
+                <a href="works/case-03.html" class="work-card fade-in" data-gtm-event="works_detail_click">
+                    <div class="work-card__image">
+                        <img src="images/works-03.png" alt="大手自動車メーカー様"
+                            style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="work-card__body">
+                        <span class="work-card__tag">自動車</span>
+                        <h3 class="work-card__title">大手自動車メーカー様：リサイクル系事業素材回収先開拓支援</h3>
+                        <p class="work-card__desc">リサイクル事業における回収先の新規開拓</p>
+                    </div>
+                </a>
+                <a href="works/case-04.html" class="work-card fade-in" data-gtm-event="works_detail_click">
+                    <div class="work-card__image">
+                        <img src="images/works-04.png" alt="大手商社子会社様"
+                            style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="work-card__body">
+                        <span class="work-card__tag">DX・SaaS</span>
+                        <h3 class="work-card__title">大手商社子会社様：業務DX特化型SaaS戦略策定・商談獲得支援</h3>
+                        <p class="work-card__desc">DX SaaSの営業戦略策定と商談獲得</p>
+                    </div>
+                </a>
+                <a href="works/case-05.html" class="work-card fade-in" data-gtm-event="works_detail_click">
+                    <div class="work-card__image">
+                        <img src="images/works-05.png" alt="大手金融会社様" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="work-card__body">
+                        <span class="work-card__tag">不動産・金融</span>
+                        <h3 class="work-card__title">大手金融会社様：不動産/マンション関連事業商談獲得支援</h3>
+                        <p class="work-card__desc">不動産関連事業の商談獲得をご支援</p>
+                    </div>
+                </a>
+                <a href="works/case-06.html" class="work-card fade-in" data-gtm-event="works_detail_click">
+                    <div class="work-card__image">
+                        <img src="images/works-06.png" alt="大手飲料メーカー様"
+                            style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="work-card__body">
+                        <span class="work-card__tag">飲料・ヘルスケア</span>
+                        <h3 class="work-card__title">大手飲料メーカー様：薬局向けソリューションアポイント獲得テレアポ支援</h3>
+                        <p class="work-card__desc">テレアポによるアポイント獲得</p>
+                    </div>
+                </a>
+                <a href="works/case-07.html" class="work-card fade-in" data-gtm-event="works_detail_click">
+                    <div class="work-card__image">
+                        <img src="images/works-07.png" alt="大手自動車メーカー様"
+                            style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="work-card__body">
+                        <span class="work-card__tag">自動車・技術</span>
+                        <h3 class="work-card__title">大手自動車メーカー様：技術コンサル系事業展示会〜テレアポでの商談獲得/商談代行支援</h3>
+                        <p class="work-card__desc">展示会からテレアポ、商談代行まで</p>
+                    </div>
+                </a>
+                <a href="works/case-08.html" class="work-card fade-in" data-gtm-event="works_detail_click">
+                    <div class="work-card__image">
+                        <img src="images/works-08.png" alt="大手金融会社様" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="work-card__body">
+                        <span class="work-card__tag">研修・育成</span>
+                        <h3 class="work-card__title">大手金融会社様：営業力向上研修</h3>
+                        <p class="work-card__desc">営業力向上のための実践型研修を実施</p>
+                    </div>
+                </a>
             </div>
         </div>
+    </section>
 
-        <section class="section">
-            <div class="container">
-                <div class="works-grid">
-                    <a href="works/case-01.html" class="work-card fade-in" data-gtm-event="works_detail_click">
-                        <div class="work-card__image">
-                            <img src="images/works-01.png" alt="大手金融子会社様"
-                                style="width:100%; height:100%; object-fit:cover;">
-                        </div>
-                        <div class="work-card__body">
-                            <span class="work-card__tag">金融</span>
-                            <h3 class="work-card__title">大手金融子会社様：新規ファイナンス系事業初期営業戦略・商談獲得支援</h3>
-                            <p class="work-card__desc">営業戦略策定から商談獲得までを一貫支援</p>
-                        </div>
-                    </a>
-                    <a href="works/case-02.html" class="work-card fade-in" data-gtm-event="works_detail_click">
-                        <div class="work-card__image">
-                            <img src="images/works-02.png" alt="大手建設会社様"
-                                style="width:100%; height:100%; object-fit:cover;">
-                        </div>
-                        <div class="work-card__body">
-                            <span class="work-card__tag">建設</span>
-                            <h3 class="work-card__title">大手建設会社様：福利厚生系サービスtoBヒアリング先開拓支援</h3>
-                            <p class="work-card__desc">toBヒアリング先の開拓をご支援</p>
-                        </div>
-                    </a>
-                    <a href="works/case-03.html" class="work-card fade-in" data-gtm-event="works_detail_click">
-                        <div class="work-card__image">
-                            <img src="images/works-03.png" alt="大手自動車メーカー様"
-                                style="width:100%; height:100%; object-fit:cover;">
-                        </div>
-                        <div class="work-card__body">
-                            <span class="work-card__tag">自動車</span>
-                            <h3 class="work-card__title">大手自動車メーカー様：リサイクル系事業素材回収先開拓支援</h3>
-                            <p class="work-card__desc">リサイクル事業における回収先の新規開拓</p>
-                        </div>
-                    </a>
-                    <a href="works/case-04.html" class="work-card fade-in" data-gtm-event="works_detail_click">
-                        <div class="work-card__image">
-                            <img src="images/works-04.png" alt="大手商社子会社様"
-                                style="width:100%; height:100%; object-fit:cover;">
-                        </div>
-                        <div class="work-card__body">
-                            <span class="work-card__tag">DX・SaaS</span>
-                            <h3 class="work-card__title">大手商社子会社様：業務DX特化型SaaS戦略策定・商談獲得支援</h3>
-                            <p class="work-card__desc">DX SaaSの営業戦略策定と商談獲得</p>
-                        </div>
-                    </a>
-                    <a href="works/case-05.html" class="work-card fade-in" data-gtm-event="works_detail_click">
-                        <div class="work-card__image">
-                            <img src="images/works-05.png" alt="大手金融会社様"
-                                style="width:100%; height:100%; object-fit:cover;">
-                        </div>
-                        <div class="work-card__body">
-                            <span class="work-card__tag">不動産・金融</span>
-                            <h3 class="work-card__title">大手金融会社様：不動産/マンション関連事業商談獲得支援</h3>
-                            <p class="work-card__desc">不動産関連事業の商談獲得をご支援</p>
-                        </div>
-                    </a>
-                    <a href="works/case-06.html" class="work-card fade-in" data-gtm-event="works_detail_click">
-                        <div class="work-card__image">
-                            <img src="images/works-06.png" alt="大手飲料メーカー様"
-                                style="width:100%; height:100%; object-fit:cover;">
-                        </div>
-                        <div class="work-card__body">
-                            <span class="work-card__tag">飲料・ヘルスケア</span>
-                            <h3 class="work-card__title">大手飲料メーカー様：薬局向けソリューションアポイント獲得テレアポ支援</h3>
-                            <p class="work-card__desc">テレアポによるアポイント獲得</p>
-                        </div>
-                    </a>
-                    <a href="works/case-07.html" class="work-card fade-in" data-gtm-event="works_detail_click">
-                        <div class="work-card__image">
-                            <img src="images/works-07.png" alt="大手自動車メーカー様"
-                                style="width:100%; height:100%; object-fit:cover;">
-                        </div>
-                        <div class="work-card__body">
-                            <span class="work-card__tag">自動車・技術</span>
-                            <h3 class="work-card__title">大手自動車メーカー様：技術コンサル系事業展示会〜テレアポでの商談獲得/商談代行支援</h3>
-                            <p class="work-card__desc">展示会からテレアポ、商談代行まで</p>
-                        </div>
-                    </a>
-                    <a href="works/case-08.html" class="work-card fade-in" data-gtm-event="works_detail_click">
-                        <div class="work-card__image">
-                            <img src="images/works-08.png" alt="大手金融会社様"
-                                style="width:100%; height:100%; object-fit:cover;">
-                        </div>
-                        <div class="work-card__body">
-                            <span class="work-card__tag">研修・育成</span>
-                            <h3 class="work-card__title">大手金融会社様：営業力向上研修</h3>
-                            <p class="work-card__desc">営業力向上のための実践型研修を実施</p>
-                        </div>
-                    </a>
-                </div>
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-section__title">まずはお気軽にご相談ください</h2>
+            <p class="cta-section__text">貴社の事業フェーズや課題に合わせた最適なご支援を検討いたします。</p>
+            <div class="btn-group">
+                <a href="contact.html" class="btn btn--white btn--lg">無料相談</a>
+
             </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="cta-section">
-            <div class="container">
-                <h2 class="cta-section__title">まずはお気軽にご相談ください</h2>
-                <p class="cta-section__text">貴社の事業フェーズや課題に合わせた最適なご支援を検討いたします。</p>
-                <div class="btn-group">
-                    <a href="contact.html" class="btn btn--white btn--lg">無料相談</a>
-
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
     </main>
 
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer__inner">
                 <div>
-                    <div class="footer__brand"><img src="images/logo.svg" alt="MarchOn" class="footer__logo-img"></div>
+                    <div class="footer__brand"><img src="images/marchon-logo.png" alt="MarchOn"
+                            class="footer__logo-img"></div>
                     <p class="footer__tagline">新規事業開発支援のアルファドライブから<br>生まれた営業支援組織</p>
                 </div>
                 <div>

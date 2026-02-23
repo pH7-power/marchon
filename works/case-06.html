@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,91 +8,132 @@
   <meta name="description" content="MarchOnの営業支援事例：大手飲料メーカー様：薬局向けソリューションアポイント獲得テレアポ支援">
   <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
   <header class="header" role="banner">
     <div class="header__inner">
       <a href="../index.html" class="header__logo"><img src="../images/header-logo-new.png" alt="MarchOn"></a>
       <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
-        <a href="../index.html" class="header__nav-link">TOP</a><a href="../about.html" class="header__nav-link">MarchOnとは</a><a href="../service.html" class="header__nav-link">支援内容</a><a href="../works.html" class="header__nav-link header__nav-link--active">事例</a><a href="../member.html" class="header__nav-link">メンバー</a><a href="../event.html" class="header__nav-link">イベント</a><a href="../company.html" class="header__nav-link">会社概要</a><a href="../contact.html" class="header__nav-link">お問い合わせ</a>
+        <div class="header__nav-item">
+          <a href="../about.html" class="header__nav-link">MarchOnとは</a>
+          <div class="header__dropdown">
+            <a href="../vision.html" class="header__dropdown-link">Vision</a>
+            <a href="../value.html" class="header__dropdown-link">Value</a>
+          </div>
+        </div>
+        <a href="../service.html" class="header__nav-link">支援内容</a>
+        <a href="../works.html" class="header__nav-link header__nav-link--active">事例</a>
+        <a href="../member.html" class="header__nav-link">メンバー</a>
+        <a href="../event.html" class="header__nav-link">イベント</a>
+        <a href="../company.html" class="header__nav-link">会社概要</a>
+        <a href="../contact.html" class="header__nav-link">お問い合わせ</a>
       </nav>
-      <div class="header__cta"><a href="../contact.html" class="btn btn--primary btn--sm">無料相談</a></div>
-      <button class="header__mobile-toggle" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="header__mobile-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="header__mobile-toggle-bar"></span>
+        <span class="header__mobile-toggle-bar"></span>
+        <span class="header__mobile-toggle-bar"></span>
+      </button>
     </div>
   </header>
-  <nav class="mobile-nav" role="navigation" aria-label="モバイルナビゲーション">
-    <a href="../index.html" class="mobile-nav__link">TOP</a><a href="../about.html" class="mobile-nav__link">MarchOnとは</a><a href="../service.html" class="mobile-nav__link">支援内容</a><a href="../works.html" class="mobile-nav__link">事例</a><a href="../member.html" class="mobile-nav__link">メンバー</a><a href="../event.html" class="mobile-nav__link">イベント</a><a href="../company.html" class="mobile-nav__link">会社概要</a><a href="../contact.html" class="mobile-nav__link">お問い合わせ</a>
-    <div class="mobile-nav__cta"><a href="../contact.html" class="btn btn--primary btn--full">無料相談</a></div>
+
+  <nav class="mobile-nav" aria-label="モバイルナビゲーション" id="mobile-nav">
+    <div class="mobile-nav__inner">
+      <div class="mobile-nav__item">
+        <a href="../about.html" class="mobile-nav__link mobile-nav__link--has-sub">MarchOnとは</a>
+        <div class="mobile-nav__dropdown">
+          <a href="../vision.html" class="mobile-nav__dropdown-link">Vision</a>
+          <a href="../value.html" class="mobile-nav__dropdown-link">Value</a>
+        </div>
+      </div>
+      <a href="../service.html" class="mobile-nav__link">支援内容</a>
+      <a href="../works.html" class="mobile-nav__link">事例</a>
+      <a href="../member.html" class="mobile-nav__link">メンバー</a>
+      <a href="../event.html" class="mobile-nav__link">イベント</a>
+      <a href="../company.html" class="mobile-nav__link">会社概要</a>
+      <a href="../contact.html" class="mobile-nav__link">お問い合わせ</a>
+    </div>
   </nav>
 
-  <main>
-    <div class="page-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../works/images/case-06.jpg'); background-size: cover; background-position: center;">
-      <div class="container">
-        <div class="breadcrumb">
-          <a href="../index.html">TOP</a><span class="breadcrumb__sep">›</span>
-          <a href="../works.html">事例</a><span class="breadcrumb__sep">›</span>
-          <span class="breadcrumb__current">Case 06</span>
+  <div class="page-header">
+    <div class="container text-center">
+
+      <div class="page-header__label">飲料・ヘルスケア</div>
+      <h1 class="page-header__title" style="font-size: var(--text-2xl);">大手飲料メーカー様：薬局向けソリューションアポイント獲得テレアポ支援</h1>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="case-detail">
+        <div class="case-detail__section fade-in">
+          <span class="case-detail__label">📌 背景・課題</span>
+          <p class="case-detail__text">※ 詳細情報は準備中です。公式HPにはタイトル情報のみ掲載されているため、詳細内容は確認後に追加予定です。</p>
         </div>
-        <div class="page-header__label">飲料・ヘルスケア</div>
-        <h1 class="page-header__title" style="font-size: var(--text-2xl);">大手飲料メーカー様：薬局向けソリューションアポイント獲得テレアポ支援</h1>
+
+        <div class="case-detail__section fade-in">
+          <span class="case-detail__label">🔧 支援内容</span>
+          <p class="case-detail__text">※ 詳細情報は準備中です。</p>
+        </div>
+
+        <div class="case-detail__section fade-in">
+          <span class="case-detail__label">�� 支援体制</span>
+          <p class="case-detail__text">※ 詳細情報は準備中です。</p>
+        </div>
+
+        <div class="case-detail__section fade-in">
+          <span class="case-detail__label">📊 結果</span>
+          <p class="case-detail__text">※ 詳細情報は準備中です。</p>
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-3xl);" class="fade-in">
+          <a href="../works.html" class="btn btn--outline">← 事例一覧に戻る</a>
+        </div>
       </div>
     </div>
+  </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="case-detail">
-          <div class="case-detail__section fade-in">
-            <span class="case-detail__label">📌 背景・課題</span>
-            <p class="case-detail__text">※ 詳細情報は準備中です。公式HPにはタイトル情報のみ掲載されているため、詳細内容は確認後に追加予定です。</p>
-          </div>
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-section__title">まずはお気軽にご相談ください</h2>
+      <p class="cta-section__text">類似の課題をお持ちの方はもちろん、<br>まだ課題が明確でない段階のご相談も歓迎いたします。</p>
+      <div class="btn-group">
+        <a href="../contact.html" class="btn btn--white btn--lg">無料相談</a>
 
-          <div class="case-detail__section fade-in">
-            <span class="case-detail__label">🔧 支援内容</span>
-            <p class="case-detail__text">※ 詳細情報は準備中です。</p>
-          </div>
-
-          <div class="case-detail__section fade-in">
-            <span class="case-detail__label">�� 支援体制</span>
-            <p class="case-detail__text">※ 詳細情報は準備中です。</p>
-          </div>
-
-          <div class="case-detail__section fade-in">
-            <span class="case-detail__label">📊 結果</span>
-            <p class="case-detail__text">※ 詳細情報は準備中です。</p>
-          </div>
-
-          <div style="text-align: center; margin-top: var(--space-3xl);" class="fade-in">
-            <a href="../works.html" class="btn btn--outline">← 事例一覧に戻る</a>
-          </div>
-        </div>
       </div>
-    </section>
-
-    <section class="cta-section">
-      <div class="container">
-        <h2 class="cta-section__title">まずはお気軽にご相談ください</h2>
-        <p class="cta-section__text">類似の課題をお持ちの方はもちろん、<br>まだ課題が明確でない段階のご相談も歓迎いたします。</p>
-        <div class="btn-group">
-          <a href="../contact.html" class="btn btn--white btn--lg">無料相談</a>
-          
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
   </main>
 
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__inner">
-        <div><div class="footer__brand"><img src="../images/logo.svg" alt="MarchOn" class="footer__logo-img"></div><p class="footer__tagline">新規事業開発支援のアルファドライブから<br>生まれた営業支援組織</p></div>
-        <div><div class="footer__heading">ページ</div><a href="../index.html" class="footer__link">TOP</a><a href="../about.html" class="footer__link">MarchOnとは</a><a href="../service.html" class="footer__link">支援内容</a><a href="../works.html" class="footer__link">事例</a></div>
-        <div><div class="footer__heading">その他</div><a href="../member.html" class="footer__link">メンバー</a><a href="../event.html" class="footer__link">イベント</a><a href="../company.html" class="footer__link">会社概要</a><a href="../contact.html" class="footer__link">お問い合わせ</a></div>
-        <div><div class="footer__heading">お問い合わせ</div><a href="../contact.html" class="footer__link">無料相談はこちら</a></div>
+        <div>
+          <div class="footer__brand"><img src="../images/marchon-logo.png" alt="MarchOn" class="footer__logo-img">
+          </div>
+          <p class="footer__tagline">新規事業開発支援のアルファドライブから<br>生まれた営業支援組織</p>
+        </div>
+        <div>
+          <div class="footer__heading">ページ</div><a href="../index.html" class="footer__link">TOP</a><a
+            href="../about.html" class="footer__link">MarchOnとは</a><a href="../service.html"
+            class="footer__link">支援内容</a><a href="../works.html" class="footer__link">事例</a>
+        </div>
+        <div>
+          <div class="footer__heading">その他</div><a href="../member.html" class="footer__link">メンバー</a><a
+            href="../event.html" class="footer__link">イベント</a><a href="../company.html" class="footer__link">会社概要</a><a
+            href="../contact.html" class="footer__link">お問い合わせ</a>
+        </div>
+        <div>
+          <div class="footer__heading">お問い合わせ</div><a href="../contact.html" class="footer__link">無料相談はこちら</a>
+        </div>
       </div>
       <div class="footer__bottom">
         <div class="footer__copyright">© 2026 株式会社MarchOn All Rights Reserved.</div>
-        <div class="footer__parent">AlphaDriveグループ｜<a href="https://alphadrive.co.jp/" target="_blank" rel="noopener noreferrer">株式会社アルファドライブ</a></div>
+        <div class="footer__parent">AlphaDriveグループ｜<a href="https://alphadrive.co.jp/" target="_blank"
+            rel="noopener noreferrer">株式会社アルファドライブ</a></div>
       </div>
     </div>
   </footer>
   <script src="../js/main.js"></script>
 </body>
+
 </html>

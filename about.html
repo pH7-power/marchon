@@ -19,8 +19,13 @@
         <div class="header__inner">
             <a href="index.html" class="header__logo"><img src="images/header-logo-new.png" alt="MarchOn"></a>
             <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
-                <a href="index.html" class="header__nav-link">TOP</a>
-                <a href="about.html" class="header__nav-link header__nav-link--active">MarchOnとは</a>
+                <div class="header__nav-item">
+                    <a href="about.html" class="header__nav-link header__nav-link--active">MarchOnとは</a>
+                    <div class="header__dropdown">
+                        <a href="vision.html" class="header__dropdown-link">Vision</a>
+                        <a href="value.html" class="header__dropdown-link">Value</a>
+                    </div>
+                </div>
                 <a href="service.html" class="header__nav-link">支援内容</a>
                 <a href="works.html" class="header__nav-link">事例</a>
                 <a href="member.html" class="header__nav-link">メンバー</a>
@@ -28,136 +33,143 @@
                 <a href="company.html" class="header__nav-link">会社概要</a>
                 <a href="contact.html" class="header__nav-link">お問い合わせ</a>
             </nav>
-            <div class="header__cta"><a href="contact.html" class="btn btn--primary btn--sm">無料相談</a></div>
-            <button class="header__mobile-toggle" aria-label="メニューを開く"
-                aria-expanded="false"><span></span><span></span><span></span></button>
+            <button class="header__mobile-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-nav">
+                <span class="header__mobile-toggle-bar"></span>
+                <span class="header__mobile-toggle-bar"></span>
+                <span class="header__mobile-toggle-bar"></span>
+            </button>
         </div>
     </header>
-    <nav class="mobile-nav" role="navigation" aria-label="モバイルナビゲーション">
-        <a href="index.html" class="mobile-nav__link">TOP</a>
-        <a href="about.html" class="mobile-nav__link">MarchOnとは</a>
-        <a href="service.html" class="mobile-nav__link">支援内容</a>
-        <a href="works.html" class="mobile-nav__link">事例</a>
-        <a href="member.html" class="mobile-nav__link">メンバー</a>
-        <a href="event.html" class="mobile-nav__link">イベント</a>
-        <a href="company.html" class="mobile-nav__link">会社概要</a>
-        <a href="contact.html" class="mobile-nav__link">お問い合わせ</a>
-        <div class="mobile-nav__cta"><a href="contact.html" class="btn btn--primary btn--full">無料相談</a></div>
+
+    <nav class="mobile-nav" aria-label="モバイルナビゲーション" id="mobile-nav">
+        <div class="mobile-nav__inner">
+            <div class="mobile-nav__item">
+                <span class="mobile-nav__link mobile-nav__link--has-sub">MarchOnとは</span>
+                <div class="mobile-nav__dropdown">
+                    <a href="vision.html" class="mobile-nav__dropdown-link">Vision</a>
+                    <a href="value.html" class="mobile-nav__dropdown-link">Value</a>
+                </div>
+            </div>
+            <a href="service.html" class="mobile-nav__link">支援内容</a>
+            <a href="works.html" class="mobile-nav__link">事例</a>
+            <a href="member.html" class="mobile-nav__link">メンバー</a>
+            <a href="event.html" class="mobile-nav__link">イベント</a>
+            <a href="company.html" class="mobile-nav__link">会社概要</a>
+            <a href="contact.html" class="mobile-nav__link">お問い合わせ</a>
+        </div>
     </nav>
 
-    <main>
-        <!-- Page Header -->
-        <div class="page-header">
-            <div class="container">
-                <div class="page-header__label">About</div>
-                <h1 class="page-header__title">MarchOnとは</h1>
-                <p class="page-header__description">
-                    新規事業にこそ、「営業力」が必須。<br>私たちは、その信念から生まれた営業支援組織です。</p>
+    <div class="page-header">
+        <div class="container text-center">
+
+            <h1 class="page-header__title">MarchOnとは</h1>
+            <p class="page-header__description">
+                新規事業にこそ、「営業力」が必須。<br>私たちは、その信念から生まれた営業支援組織です。</p>
+        </div>
+    </div>
+
+    <!-- Mission -->
+    <section class="section section--mission">
+        <div class="container container--narrow">
+            <div class="fade-in" style="text-align: center; margin-bottom: var(--space-3xl);">
+                <h2 class="section__title" style="margin-bottom: var(--space-xl);">新規事業にこそ、<br>「営業力」が必須</h2>
+            </div>
+            <div class="fade-in" style="max-width: 720px; margin: 0 auto;">
+                <p
+                    style="font-size: var(--text-lg); line-height: var(--leading-relaxed); margin-bottom: var(--space-xl);">
+                    誰とでもすぐにコミュニケーションが取れ、あらゆる情報にアクセスできるこの時代。それでもなお、いや、だからこそ、時には地道な営業活動が大きな力を発揮すると我々は信じています。
+                </p>
+                <p
+                    style="font-size: var(--text-lg); line-height: var(--leading-relaxed); margin-bottom: var(--space-xl);">
+                    MarchOnチームは、株式会社アルファドライブの子会社として新規事業領域においての知見を生かし、セールスの力であらゆる事業の成長を後押しする組織です。
+                </p>
+                <p style="font-size: var(--text-lg); line-height: var(--leading-relaxed);">
+                    手法は問わず、VUCAの時代を生き抜く「地力」をあらゆる事業に装着することを目指しています。
+                </p>
             </div>
         </div>
+    </section>
 
-        <!-- Mission -->
-        <section class="section section--mission">
-            <div class="container container--narrow">
-                <div class="fade-in" style="text-align: center; margin-bottom: var(--space-3xl);">
-                    <h2 class="section__title" style="margin-bottom: var(--space-xl);">新規事業にこそ、<br>「営業力」が必須</h2>
-                </div>
-                <div class="fade-in" style="max-width: 720px; margin: 0 auto;">
-                    <p
-                        style="font-size: var(--text-lg); line-height: var(--leading-relaxed); margin-bottom: var(--space-xl);">
-                        誰とでもすぐにコミュニケーションが取れ、あらゆる情報にアクセスできるこの時代。それでもなお、いや、だからこそ、時には地道な営業活動が大きな力を発揮すると我々は信じています。
+    <!-- Features -->
+    <section class="section section--alt">
+        <div class="container">
+            <div class="section__header fade-in">
+                <div class="section__label">Feature</div>
+                <h2 class="section__title">MarchOnの特徴</h2>
+                <p class="section__subtitle">戦略策定から営業実行、そして組織への定着まで。<br>新規事業に必要な営業力を、3つの強みでご支援します。</p>
+            </div>
+
+            <div class="grid grid--3">
+                <div class="card fade-in">
+                    <div class="card__icon-wrapper">
+                        <div class="card__icon">🎯</div>
+                    </div>
+                    <h3 class="card__title">新規事業×営業経験者による<br>ディレクション</h3>
+                    <p class="card__text">
+                        ディレクターとして各種戦略策定やプロジェクトを管理するメンバーはこれまで、事業会社もしくはアルファドライブにて数多くの新規事業に関わってきました。戦略構築力、事業開発力が高い人材が揃っており、商材ごとに最適な戦略を描くことができます。
                     </p>
-                    <p
-                        style="font-size: var(--text-lg); line-height: var(--leading-relaxed); margin-bottom: var(--space-xl);">
-                        MarchOnチームは、株式会社アルファドライブの子会社として新規事業領域においての知見を生かし、セールスの力であらゆる事業の成長を後押しする組織です。
+                </div>
+                <div class="card fade-in">
+                    <div class="card__icon-wrapper">
+                        <div class="card__icon">📈</div>
+                    </div>
+                    <h3 class="card__title">仮説アップデートによる<br>営業の質向上</h3>
+                    <p class="card__text">
+                        不確実な新規事業だからこそ、常に仮説を持ちながら営業活動を行うことを大切にしています。営業を行う中で当初の仮説が違った場合でも、すぐさま新たな仮説を立てて営業活動を行うため、その質は活動をする度に向上していき、結果につながります。
                     </p>
-                    <p style="font-size: var(--text-lg); line-height: var(--leading-relaxed);">
-                        手法は問わず、VUCAの時代を生き抜く「地力」をあらゆる事業に装着することを目指しています。
+                </div>
+                <div class="card fade-in">
+                    <div class="card__icon-wrapper">
+                        <div class="card__icon">⚡</div>
+                    </div>
+                    <h3 class="card__title">泥臭いアプローチ<br>圧倒的な行動量</h3>
+                    <p class="card__text">
+                        不確実な新規事業においては、「断られる」ことの方が多く、慣れていなければメンタル・リソース共に苦しい状態に陥りがちです。我々はBtoB/BtoC問わず様々なアプローチを経験してきた社員やパートナーとともに泥臭い手段であろうとも行動量を担保しながら営業活動を進めます。
                     </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Features -->
-        <section class="section section--alt">
-            <div class="container">
-                <div class="section__header fade-in">
-                    <div class="section__label">Feature</div>
-                    <h2 class="section__title">MarchOnの特徴</h2>
-                    <p class="section__subtitle">戦略策定から営業実行、そして組織への定着まで。<br>新規事業に必要な営業力を、3つの強みでご支援します。</p>
+    <!-- Values (同一データ) -->
+    <section class="section">
+        <div class="container">
+            <div class="section__header fade-in">
+                <div class="section__label">Values</div>
+                <h2 class="section__title">私たちが大切にしていること</h2>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card fade-in">
+                    <div class="value-card__number">01</div>
+                    <h3 class="value-card__title">不確実を言い訳にしない。</h3>
+                    <p class="value-card__text">新規事業という不確定要素が多い中で「できない理由」を並べず、やり切る。やれるためにはどうしたらいいか、を考えます。</p>
                 </div>
-
-                <div class="grid grid--3">
-                    <div class="card fade-in">
-                        <div class="card__icon-wrapper">
-                            <div class="card__icon">🎯</div>
-                        </div>
-                        <h3 class="card__title">新規事業×営業経験者による<br>ディレクション</h3>
-                        <p class="card__text">
-                            ディレクターとして各種戦略策定やプロジェクトを管理するメンバーはこれまで、事業会社もしくはアルファドライブにて数多くの新規事業に関わってきました。戦略構築力、事業開発力が高い人材が揃っており、商材ごとに最適な戦略を描くことができます。
-                        </p>
-                    </div>
-                    <div class="card fade-in">
-                        <div class="card__icon-wrapper">
-                            <div class="card__icon">📈</div>
-                        </div>
-                        <h3 class="card__title">仮説アップデートによる<br>営業の質向上</h3>
-                        <p class="card__text">
-                            不確実な新規事業だからこそ、常に仮説を持ちながら営業活動を行うことを大切にしています。営業を行う中で当初の仮説が違った場合でも、すぐさま新たな仮説を立てて営業活動を行うため、その質は活動をする度に向上していき、結果につながります。
-                        </p>
-                    </div>
-                    <div class="card fade-in">
-                        <div class="card__icon-wrapper">
-                            <div class="card__icon">⚡</div>
-                        </div>
-                        <h3 class="card__title">泥臭いアプローチ<br>圧倒的な行動量</h3>
-                        <p class="card__text">
-                            不確実な新規事業においては、「断られる」ことの方が多く、慣れていなければメンタル・リソース共に苦しい状態に陥りがちです。我々はBtoB/BtoC問わず様々なアプローチを経験してきた社員やパートナーとともに泥臭い手段であろうとも行動量を担保しながら営業活動を進めます。
-                        </p>
-                    </div>
+                <div class="value-card fade-in">
+                    <div class="value-card__number">02</div>
+                    <h3 class="value-card__title">過去にしがみつかない。</h3>
+                    <p class="value-card__text">過去のやり方、成功体験にばかりしがみつかず、時代と顧客に合ったやり方を常に模索し最大パフォーマンスを発揮します。</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-card__number">03</div>
+                    <h3 class="value-card__title">歩みを止めない。</h3>
+                    <p class="value-card__text">常に頭を動かす、手足を動かすことで、仮説検証を高速で回し続け、事業成長に全身全霊で寄与します。</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Values (同一データ) -->
-        <section class="section">
-            <div class="container">
-                <div class="section__header fade-in">
-                    <div class="section__label">Values</div>
-                    <h2 class="section__title">私たちが大切にしていること</h2>
-                </div>
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-section__title">まずはお気軽にご相談ください</h2>
+            <p class="cta-section__text">新規事業の営業に関するお悩みやご相談を、私たちにお聞かせください。</p>
+            <div class="btn-group">
+                <a href="contact.html" class="btn btn--white btn--lg">無料相談</a>
 
-                <div class="values-grid">
-                    <div class="value-card fade-in">
-                        <div class="value-card__number">01</div>
-                        <h3 class="value-card__title">不確実を言い訳にしない。</h3>
-                        <p class="value-card__text">新規事業という不確定要素が多い中で「できない理由」を並べず、やり切る。やれるためにはどうしたらいいか、を考えます。</p>
-                    </div>
-                    <div class="value-card fade-in">
-                        <div class="value-card__number">02</div>
-                        <h3 class="value-card__title">過去にしがみつかない。</h3>
-                        <p class="value-card__text">過去のやり方、成功体験にばかりしがみつかず、時代と顧客に合ったやり方を常に模索し最大パフォーマンスを発揮します。</p>
-                    </div>
-                    <div class="value-card fade-in">
-                        <div class="value-card__number">03</div>
-                        <h3 class="value-card__title">歩みを止めない。</h3>
-                        <p class="value-card__text">常に頭を動かす、手足を動かすことで、仮説検証を高速で回し続け、事業成長に全身全霊で寄与します。</p>
-                    </div>
-                </div>
             </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="cta-section">
-            <div class="container">
-                <h2 class="cta-section__title">まずはお気軽にご相談ください</h2>
-                <p class="cta-section__text">新規事業の営業に関するお悩みやご相談を、私たちにお聞かせください。</p>
-                <div class="btn-group">
-                    <a href="contact.html" class="btn btn--white btn--lg">無料相談</a>
-
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
     </main>
 
     <!-- Footer -->
@@ -165,7 +177,8 @@
         <div class="container">
             <div class="footer__inner">
                 <div>
-                    <div class="footer__brand"><img src="images/header-logo-new.png" alt="MarchOn" class="footer__logo-img">
+                    <div class="footer__brand"><img src="images/marchon-logo.png" alt="MarchOn"
+                            class="footer__logo-img">
                     </div>
                     <p class="footer__tagline">新規事業開発支援のアルファドライブから<br>生まれた営業支援組織</p>
                 </div>

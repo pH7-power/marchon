@@ -19,8 +19,12 @@
         <div class="header__inner">
             <a href="index.html" class="header__logo"><img src="images/header-logo-new.png" alt="MarchOn"></a>
             <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
-                <a href="index.html" class="header__nav-link">TOP</a>
-                <a href="about.html" class="header__nav-link">MarchOnとは</a>
+                <div class="header__nav-item"><a href="about.html" class="header__nav-link">MarchOnとは</a>
+                    <div class="header__dropdown">
+                        <a href="vision.html" class="header__dropdown-link">Vision</a>
+                        <a href="value.html" class="header__dropdown-link">Value</a>
+                    </div>
+                </div>
                 <a href="service.html" class="header__nav-link header__nav-link--active">支援内容</a>
                 <a href="works.html" class="header__nav-link">事例</a>
                 <a href="member.html" class="header__nav-link">メンバー</a>
@@ -28,156 +32,163 @@
                 <a href="company.html" class="header__nav-link">会社概要</a>
                 <a href="contact.html" class="header__nav-link">お問い合わせ</a>
             </nav>
-            <div class="header__cta"><a href="contact.html" class="btn btn--primary btn--sm">無料相談</a></div>
-            <button class="header__mobile-toggle" aria-label="メニューを開く"
-                aria-expanded="false"><span></span><span></span><span></span></button>
+            <button class="header__mobile-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-nav">
+                <span class="header__mobile-toggle-bar"></span>
+                <span class="header__mobile-toggle-bar"></span>
+                <span class="header__mobile-toggle-bar"></span>
+            </button>
         </div>
     </header>
-    <nav class="mobile-nav" role="navigation" aria-label="モバイルナビゲーション">
-        <a href="index.html" class="mobile-nav__link">TOP</a>
-        <a href="about.html" class="mobile-nav__link">MarchOnとは</a>
-        <a href="service.html" class="mobile-nav__link">支援内容</a>
-        <a href="works.html" class="mobile-nav__link">事例</a>
-        <a href="member.html" class="mobile-nav__link">メンバー</a>
-        <a href="event.html" class="mobile-nav__link">イベント</a>
-        <a href="company.html" class="mobile-nav__link">会社概要</a>
-        <a href="contact.html" class="mobile-nav__link">お問い合わせ</a>
-        <div class="mobile-nav__cta"><a href="contact.html" class="btn btn--primary btn--full">無料相談</a></div>
+
+    <nav class="mobile-nav" aria-label="モバイルナビゲーション" id="mobile-nav">
+        <div class="mobile-nav__inner">
+            <div class="mobile-nav__item">
+                <a href="about.html" class="mobile-nav__link mobile-nav__link--has-sub">MarchOnとは</a>
+                <div class="mobile-nav__dropdown">
+                    <a href="vision.html" class="mobile-nav__dropdown-link">Vision</a>
+                    <a href="value.html" class="mobile-nav__dropdown-link">Value</a>
+                </div>
+            </div>
+            <a href="service.html" class="mobile-nav__link">支援内容</a>
+            <a href="works.html" class="mobile-nav__link">事例</a>
+            <a href="member.html" class="mobile-nav__link">メンバー</a>
+            <a href="event.html" class="mobile-nav__link">イベント</a>
+            <a href="company.html" class="mobile-nav__link">会社概要</a>
+            <a href="contact.html" class="mobile-nav__link">お問い合わせ</a>
+        </div>
     </nav>
 
-    <main>
-        <!-- Page Header -->
-        <div class="page-header">
-            <div class="container">
-                <div class="page-header__label">Service</div>
-                <h1 class="page-header__title">支援内容</h1>
-                <p class="page-header__description">セールス戦略の立案から、初期アプローチからクロージングまでのセールス実行まで、一気通貫でご支援します。</p>
+    <div class="page-header">
+        <div class="container text-center">
+
+            <h1 class="page-header__title">支援内容</h1>
+            <p class="page-header__description">セールス戦略の立案から、初期アプローチからクロージングまでのセールス実行まで、一気通貫でご支援します。</p>
+        </div>
+    </div>
+
+    <!-- 3-Phase Structure -->
+    <section class="section">
+        <div class="container">
+            <div class="section__header fade-in">
+                <div class="section__label">Support Structure</div>
+                <h2 class="section__title">ご支援の全体像</h2>
+                <p class="section__subtitle">事業フェーズに応じて、必要なご支援を柔軟に組み合わせます。<br>特定のフェーズだけのご依頼も承ります。</p>
+            </div>
+
+            <div class="phase-flow fade-in">
+                <div class="phase-item">
+                    <div class="phase-item__number">1</div>
+                    <h3 class="phase-item__title">戦略設計</h3>
+                    <p class="phase-item__text">KGI・KPI設計、ターゲット設定、提供価値の整理など、営業活動の前提となる戦略を策定します。</p>
+                </div>
+                <div class="phase-item">
+                    <div class="phase-item__number">2</div>
+                    <h3 class="phase-item__title">戦略運用</h3>
+                    <p class="phase-item__text">策定した戦略に基づき、アプローチ実行・商談代行を行い、仮説検証サイクルを回します。</p>
+                </div>
+                <div class="phase-item">
+                    <div class="phase-item__number">3</div>
+                    <h3 class="phase-item__title">運用定着</h3>
+                    <p class="phase-item__text">営業管理フローの構築や育成研修を通じて、営業の仕組みを貴社組織に定着させます。</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- 3-Phase Structure -->
-        <section class="section">
-            <div class="container">
-                <div class="section__header fade-in">
-                    <div class="section__label">Support Structure</div>
-                    <h2 class="section__title">ご支援の全体像</h2>
-                    <p class="section__subtitle">事業フェーズに応じて、必要なご支援を柔軟に組み合わせます。<br>特定のフェーズだけのご依頼も承ります。</p>
+    <!-- Service List -->
+    <section class="section section--alt">
+        <div class="container">
+            <div class="section__header fade-in">
+                <div class="section__label">Services</div>
+                <h2 class="section__title">主なサービス一覧</h2>
+                <p class="section__subtitle">以下は支援範囲の一例です。<br>事業の状況やフェーズに合わせて最適な組み合わせをご提案します。</p>
+            </div>
+
+            <div class="service-grid">
+                <div class="service-card fade-in">
+                    <div class="service-card__icon">📋</div>
+                    <h3 class="service-card__title">営業戦略立案</h3>
+                    <p class="service-card__text">
+                        KGI・KPI設計、ターゲット設定、提供価値など初期に必要な戦略を策定します。事業の方向性とマーケットの特性を踏まえた、実行可能な戦略をご一緒に描きます。</p>
                 </div>
-
-                <div class="phase-flow fade-in">
-                    <div class="phase-item">
-                        <div class="phase-item__number">1</div>
-                        <h3 class="phase-item__title">戦略設計</h3>
-                        <p class="phase-item__text">KGI・KPI設計、ターゲット設定、提供価値の整理など、営業活動の前提となる戦略を策定します。</p>
-                    </div>
-                    <div class="phase-item">
-                        <div class="phase-item__number">2</div>
-                        <h3 class="phase-item__title">戦略運用</h3>
-                        <p class="phase-item__text">策定した戦略に基づき、アプローチ実行・商談代行を行い、仮説検証サイクルを回します。</p>
-                    </div>
-                    <div class="phase-item">
-                        <div class="phase-item__number">3</div>
-                        <h3 class="phase-item__title">運用定着</h3>
-                        <p class="phase-item__text">営業管理フローの構築や育成研修を通じて、営業の仕組みを貴社組織に定着させます。</p>
-                    </div>
+                <div class="service-card fade-in">
+                    <div class="service-card__icon">📑</div>
+                    <h3 class="service-card__title">営業資料作成</h3>
+                    <p class="service-card__text">
+                        デザインも含め「伝わる」営業資料を作り上げます。ターゲットの課題感に合わせたストーリー設計から、視覚的に分かりやすい資料の制作まで対応します。</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-card__icon">📞</div>
+                    <h3 class="service-card__title">アプローチ・商談代行</h3>
+                    <p class="service-card__text">
+                        フォーム・架電・手紙、オンライン・オフライン問わず行動量を担保します。BtoB/BtoCいずれのアプローチにも対応し、商談獲得・クロージングまでをご支援します。</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-card__icon">📊</div>
+                    <h3 class="service-card__title">営業管理フロー構築</h3>
+                    <p class="service-card__text">
+                        スプレッドシート等の既存ツールで管理できる枠組みを構築します。特別なシステム導入なしに営業活動を可視化し、PDCAを回せる仕組みを整えます。</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-card__icon">🎓</div>
+                    <h3 class="service-card__title">営業力育成研修</h3>
+                    <p class="service-card__text">
+                        BtoB営業の注意点や心構え、現場で使えるテクニックを伝授します。座学だけでなく、貴社商材を題材にしたロールプレイングも対面・オンラインで対応します。</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-card__icon">🏛️</div>
+                    <h3 class="service-card__title">展示会支援</h3>
+                    <p class="service-card__text">
+                        リード獲得から商談獲得までをまるっと支援します。展示会当日のブース対応はもちろん、事前準備から事後フォローまで一貫した支援を行います。</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Service List -->
-        <section class="section section--alt">
-            <div class="container">
-                <div class="section__header fade-in">
-                    <div class="section__label">Services</div>
-                    <h2 class="section__title">主なサービス一覧</h2>
-                    <p class="section__subtitle">以下は支援範囲の一例です。<br>事業の状況やフェーズに合わせて最適な組み合わせをご提案します。</p>
+    <!-- Flow -->
+    <section class="section">
+        <div class="container">
+            <div class="section__header fade-in">
+                <div class="section__label">Flow</div>
+                <h2 class="section__title">ご支援開始までの流れ</h2>
+            </div>
+
+            <div class="flow fade-in">
+                <div class="flow-step">
+                    <div class="flow-step__icon">1</div>
+                    <h3 class="flow-step__title">お問い合わせ</h3>
+                    <p class="flow-step__text">まずはお気軽にご連絡ください</p>
                 </div>
-
-                <div class="service-grid">
-                    <div class="service-card fade-in">
-                        <div class="service-card__icon">📋</div>
-                        <h3 class="service-card__title">営業戦略立案</h3>
-                        <p class="service-card__text">
-                            KGI・KPI設計、ターゲット設定、提供価値など初期に必要な戦略を策定します。事業の方向性とマーケットの特性を踏まえた、実行可能な戦略をご一緒に描きます。</p>
-                    </div>
-                    <div class="service-card fade-in">
-                        <div class="service-card__icon">📑</div>
-                        <h3 class="service-card__title">営業資料作成</h3>
-                        <p class="service-card__text">
-                            デザインも含め「伝わる」営業資料を作り上げます。ターゲットの課題感に合わせたストーリー設計から、視覚的に分かりやすい資料の制作まで対応します。</p>
-                    </div>
-                    <div class="service-card fade-in">
-                        <div class="service-card__icon">📞</div>
-                        <h3 class="service-card__title">アプローチ・商談代行</h3>
-                        <p class="service-card__text">
-                            フォーム・架電・手紙、オンライン・オフライン問わず行動量を担保します。BtoB/BtoCいずれのアプローチにも対応し、商談獲得・クロージングまでをご支援します。</p>
-                    </div>
-                    <div class="service-card fade-in">
-                        <div class="service-card__icon">📊</div>
-                        <h3 class="service-card__title">営業管理フロー構築</h3>
-                        <p class="service-card__text">
-                            スプレッドシート等の既存ツールで管理できる枠組みを構築します。特別なシステム導入なしに営業活動を可視化し、PDCAを回せる仕組みを整えます。</p>
-                    </div>
-                    <div class="service-card fade-in">
-                        <div class="service-card__icon">🎓</div>
-                        <h3 class="service-card__title">営業力育成研修</h3>
-                        <p class="service-card__text">
-                            BtoB営業の注意点や心構え、現場で使えるテクニックを伝授します。座学だけでなく、貴社商材を題材にしたロールプレイングも対面・オンラインで対応します。</p>
-                    </div>
-                    <div class="service-card fade-in">
-                        <div class="service-card__icon">🏛️</div>
-                        <h3 class="service-card__title">展示会支援</h3>
-                        <p class="service-card__text">
-                            リード獲得から商談獲得までをまるっと支援します。展示会当日のブース対応はもちろん、事前準備から事後フォローまで一貫した支援を行います。</p>
-                    </div>
+                <div class="flow-step">
+                    <div class="flow-step__icon">2</div>
+                    <h3 class="flow-step__title">資料送付</h3>
+                    <p class="flow-step__text">サービス概要資料をお送りします</p>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step__icon">3</div>
+                    <h3 class="flow-step__title">お打ち合わせ</h3>
+                    <p class="flow-step__text">課題やご要望をヒアリングします</p>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step__icon">4</div>
+                    <h3 class="flow-step__title">お見積り</h3>
+                    <p class="flow-step__text">最適なプランをご提案します</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Flow -->
-        <section class="section">
-            <div class="container">
-                <div class="section__header fade-in">
-                    <div class="section__label">Flow</div>
-                    <h2 class="section__title">ご支援開始までの流れ</h2>
-                </div>
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-section__title">まずはお気軽にご相談ください</h2>
+            <p class="cta-section__text">「こんなことを相談してもいいのかな？」と思ったら、<br>まずはお気軽にお問い合わせください。</p>
+            <div class="btn-group">
+                <a href="contact.html" class="btn btn--white btn--lg">無料相談</a>
 
-                <div class="flow fade-in">
-                    <div class="flow-step">
-                        <div class="flow-step__icon">1</div>
-                        <h3 class="flow-step__title">お問い合わせ</h3>
-                        <p class="flow-step__text">まずはお気軽にご連絡ください</p>
-                    </div>
-                    <div class="flow-step">
-                        <div class="flow-step__icon">2</div>
-                        <h3 class="flow-step__title">資料送付</h3>
-                        <p class="flow-step__text">サービス概要資料をお送りします</p>
-                    </div>
-                    <div class="flow-step">
-                        <div class="flow-step__icon">3</div>
-                        <h3 class="flow-step__title">お打ち合わせ</h3>
-                        <p class="flow-step__text">課題やご要望をヒアリングします</p>
-                    </div>
-                    <div class="flow-step">
-                        <div class="flow-step__icon">4</div>
-                        <h3 class="flow-step__title">お見積り</h3>
-                        <p class="flow-step__text">最適なプランをご提案します</p>
-                    </div>
-                </div>
             </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="cta-section">
-            <div class="container">
-                <h2 class="cta-section__title">まずはお気軽にご相談ください</h2>
-                <p class="cta-section__text">「こんなことを相談してもいいのかな？」と思ったら、<br>まずはお気軽にお問い合わせください。</p>
-                <div class="btn-group">
-                    <a href="contact.html" class="btn btn--white btn--lg">無料相談</a>
-                    
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
     </main>
 
     <!-- Footer -->
@@ -185,7 +196,8 @@
         <div class="container">
             <div class="footer__inner">
                 <div>
-                    <div class="footer__brand"><img src="images/logo.svg" alt="MarchOn" class="footer__logo-img"></div>
+                    <div class="footer__brand"><img src="images/marchon-logo.png" alt="MarchOn"
+                            class="footer__logo-img"></div>
                     <p class="footer__tagline">新規事業開発支援のアルファドライブから<br>生まれた営業支援組織</p>
                 </div>
                 <div>
@@ -205,7 +217,7 @@
                 <div>
                     <div class="footer__heading">お問い合わせ</div>
                     <a href="contact.html" class="footer__link">無料相談はこちら</a>
-                    
+
                 </div>
             </div>
             <div class="footer__bottom">

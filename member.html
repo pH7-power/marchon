@@ -15,141 +15,159 @@
         <div class="header__inner">
             <a href="index.html" class="header__logo"><img src="images/header-logo-new.png" alt="MarchOn"></a>
             <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
-                <a href="index.html" class="header__nav-link">TOP</a><a href="about.html"
-                    class="header__nav-link">MarchOnとは</a><a href="service.html" class="header__nav-link">支援内容</a><a
-                    href="works.html" class="header__nav-link">事例</a><a href="member.html"
-                    class="header__nav-link header__nav-link--active">メンバー</a><a href="event.html"
-                    class="header__nav-link">イベント</a><a href="company.html" class="header__nav-link">会社概要</a><a
-                    href="contact.html" class="header__nav-link">お問い合わせ</a>
+                <div class="header__nav-item"><a href="about.html" class="header__nav-link">MarchOnとは</a>
+                    <div class="header__dropdown">
+                        <a href="vision.html" class="header__dropdown-link">Vision</a>
+                        <a href="value.html" class="header__dropdown-link">Value</a>
+                    </div>
+                </div>
+                <a href="service.html" class="header__nav-link">支援内容</a>
+                <a href="works.html" class="header__nav-link">事例</a>
+                <a href="member.html" class="header__nav-link header__nav-link--active">メンバー</a>
+                <a href="event.html" class="header__nav-link">イベント</a>
+                <a href="company.html" class="header__nav-link">会社概要</a>
+                <a href="contact.html" class="header__nav-link">お問い合わせ</a>
             </nav>
-            <div class="header__cta"><a href="contact.html" class="btn btn--primary btn--sm">無料相談</a></div>
-            <button class="header__mobile-toggle" aria-label="メニューを開く"
-                aria-expanded="false"><span></span><span></span><span></span></button>
+            <button class="header__mobile-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-nav">
+                <span class="header__mobile-toggle-bar"></span>
+                <span class="header__mobile-toggle-bar"></span>
+                <span class="header__mobile-toggle-bar"></span>
+            </button>
         </div>
     </header>
-    <nav class="mobile-nav" role="navigation" aria-label="モバイルナビゲーション">
-        <a href="index.html" class="mobile-nav__link">TOP</a><a href="about.html"
-            class="mobile-nav__link">MarchOnとは</a><a href="service.html" class="mobile-nav__link">支援内容</a><a
-            href="works.html" class="mobile-nav__link">事例</a><a href="member.html" class="mobile-nav__link">メンバー</a><a
-            href="event.html" class="mobile-nav__link">イベント</a><a href="company.html"
-            class="mobile-nav__link">会社概要</a><a href="contact.html" class="mobile-nav__link">お問い合わせ</a>
-        <div class="mobile-nav__cta"><a href="contact.html" class="btn btn--primary btn--full">無料相談</a></div>
+
+    <nav class="mobile-nav" aria-label="モバイルナビゲーション" id="mobile-nav">
+        <div class="mobile-nav__inner">
+            <div class="mobile-nav__item">
+                <a href="about.html" class="mobile-nav__link mobile-nav__link--has-sub">MarchOnとは</a>
+                <div class="mobile-nav__dropdown">
+                    <a href="vision.html" class="mobile-nav__dropdown-link">Vision</a>
+                    <a href="value.html" class="mobile-nav__dropdown-link">Value</a>
+                </div>
+            </div>
+            <a href="service.html" class="mobile-nav__link">支援内容</a>
+            <a href="works.html" class="mobile-nav__link">事例</a>
+            <a href="member.html" class="mobile-nav__link">メンバー</a>
+            <a href="event.html" class="mobile-nav__link">イベント</a>
+            <a href="company.html" class="mobile-nav__link">会社概要</a>
+            <a href="contact.html" class="mobile-nav__link">お問い合わせ</a>
+        </div>
     </nav>
 
-    <main>
-        <div class="page-header">
-            <div class="container">
-                <div class="page-header__label">Member</div>
-                <h1 class="page-header__title">メンバー紹介</h1>
-                <p class="page-header__description">新規事業の現場を知るプロフェッショナルが、あなたの事業に伴走します。</p>
+    <div class="page-header">
+        <div class="container text-center">
+
+            <h1 class="page-header__title">メンバー紹介</h1>
+            <p class="page-header__description">新規事業の現場を知るプロフェッショナルが、あなたの事業に伴走します。</p>
+        </div>
+    </div>
+
+    <!-- Leadership -->
+    <section class="section">
+        <div class="container">
+            <div class="section__header fade-in">
+                <div class="section__label">Leadership</div>
+                <h2 class="section__title">経営メンバー</h2>
+            </div>
+
+            <div class="grid grid--2">
+                <div class="member-card fade-in"
+                    style="text-align: left; display: grid; grid-template-columns: 160px 1fr; gap: var(--space-xl); padding: var(--space-2xl);">
+                    <div>
+                        <div class="member-card__photo">👤</div>
+                    </div>
+                    <div>
+                        <span class="member-card__role">代表取締役 CEO</span>
+                        <h3 class="member-card__name" style="margin-top: var(--space-sm);">中山 健彦</h3>
+                        <p class="member-card__name-en">Takehiko Nakayama</p>
+                        <p class="member-card__text">
+                            <!-- 制作メモ：経歴詳細は公式HPに記載なし。要確認。 -->
+                            株式会社MarchOn 代表取締役。新規事業領域における営業支援のプロフェッショナルとして、MarchOnの設立から経営全般を担う。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="member-card fade-in"
+                    style="text-align: left; display: grid; grid-template-columns: 160px 1fr; gap: var(--space-xl); padding: var(--space-2xl);">
+                    <div>
+                        <div class="member-card__photo">👤</div>
+                    </div>
+                    <div>
+                        <span class="member-card__role">取締役 COO</span>
+                        <h3 class="member-card__name" style="margin-top: var(--space-sm);">岩﨑 達也</h3>
+                        <p class="member-card__name-en">Tatsuya Iwasaki</p>
+                        <p class="member-card__text">
+                            <!-- 制作メモ：経歴詳細は公式HPに記載なし。要確認。 -->
+                            株式会社MarchOn 取締役。事業運営と支援プロジェクトの統括を担い、クライアントの事業成長に向き合う。
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Leadership -->
-        <section class="section">
-            <div class="container">
-                <div class="section__header fade-in">
-                    <div class="section__label">Leadership</div>
-                    <h2 class="section__title">経営メンバー</h2>
+    <!-- Sales Directors -->
+    <section class="section section--alt">
+        <div class="container">
+            <div class="section__header fade-in">
+                <div class="section__label">Sales Team</div>
+                <h2 class="section__title">セールスメンバー</h2>
+                <p class="section__subtitle">事業会社やアルファドライブでの新規事業経験を持つメンバーが、プロジェクトをリードします。</p>
+            </div>
+
+            <div class="member-grid">
+                <div class="member-card fade-in">
+                    <div class="member-card__photo">👤</div>
+                    <span class="member-card__role">Sales Director</span>
+                    <h3 class="member-card__name">芳岡 あゆみ</h3>
+                    <p class="member-card__name-en">Ayumi Yoshioka</p>
+                    <p class="member-card__text">
+                        <!-- 制作メモ：経歴詳細は公式HPに記載なし。要確認。 -->
+                    </p>
                 </div>
 
-                <div class="grid grid--2">
-                    <div class="member-card fade-in"
-                        style="text-align: left; display: grid; grid-template-columns: 160px 1fr; gap: var(--space-xl); padding: var(--space-2xl);">
-                        <div>
-                            <div class="member-card__photo">👤</div>
-                        </div>
-                        <div>
-                            <span class="member-card__role">代表取締役 CEO</span>
-                            <h3 class="member-card__name" style="margin-top: var(--space-sm);">中山 健彦</h3>
-                            <p class="member-card__name-en">Takehiko Nakayama</p>
-                            <p class="member-card__text">
-                                <!-- 制作メモ：経歴詳細は公式HPに記載なし。要確認。 -->
-                                株式会社MarchOn 代表取締役。新規事業領域における営業支援のプロフェッショナルとして、MarchOnの設立から経営全般を担う。
-                            </p>
-                        </div>
-                    </div>
+                <div class="member-card fade-in">
+                    <div class="member-card__photo">👤</div>
+                    <span class="member-card__role">Sales Director</span>
+                    <h3 class="member-card__name">宮本 恵太郎</h3>
+                    <p class="member-card__name-en">Keitaro Miyamoto</p>
+                    <p class="member-card__text">
+                        <!-- 制作メモ：経歴詳細は公式HPに記載なし。要確認。 -->
+                    </p>
+                </div>
 
-                    <div class="member-card fade-in"
-                        style="text-align: left; display: grid; grid-template-columns: 160px 1fr; gap: var(--space-xl); padding: var(--space-2xl);">
-                        <div>
-                            <div class="member-card__photo">👤</div>
-                        </div>
-                        <div>
-                            <span class="member-card__role">取締役 COO</span>
-                            <h3 class="member-card__name" style="margin-top: var(--space-sm);">岩﨑 達也</h3>
-                            <p class="member-card__name-en">Tatsuya Iwasaki</p>
-                            <p class="member-card__text">
-                                <!-- 制作メモ：経歴詳細は公式HPに記載なし。要確認。 -->
-                                株式会社MarchOn 取締役。事業運営と支援プロジェクトの統括を担い、クライアントの事業成長に向き合う。
-                            </p>
-                        </div>
-                    </div>
+                <div class="member-card fade-in">
+                    <div class="member-card__photo">👤</div>
+                    <span class="member-card__role">Sales Director</span>
+                    <h3 class="member-card__name">北渡瀬 敦</h3>
+                    <p class="member-card__name-en">Atsushi Kitawatase</p>
+                    <p class="member-card__text">
+                        <!-- 制作メモ：経歴詳細は公式HPに記載なし。要確認。 -->
+                    </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Sales Directors -->
-        <section class="section section--alt">
-            <div class="container">
-                <div class="section__header fade-in">
-                    <div class="section__label">Sales Team</div>
-                    <h2 class="section__title">セールスメンバー</h2>
-                    <p class="section__subtitle">事業会社やアルファドライブでの新規事業経験を持つメンバーが、プロジェクトをリードします。</p>
-                </div>
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-section__title">まずはお気軽にご相談ください</h2>
+            <p class="cta-section__text">私たちのチームが、貴社の事業成長に真剣に向き合います。</p>
+            <div class="btn-group">
+                <a href="contact.html" class="btn btn--white btn--lg">無料相談</a>
 
-                <div class="member-grid">
-                    <div class="member-card fade-in">
-                        <div class="member-card__photo">👤</div>
-                        <span class="member-card__role">Sales Director</span>
-                        <h3 class="member-card__name">芳岡 あゆみ</h3>
-                        <p class="member-card__name-en">Ayumi Yoshioka</p>
-                        <p class="member-card__text">
-                            <!-- 制作メモ：経歴詳細は公式HPに記載なし。要確認。 -->
-                        </p>
-                    </div>
-
-                    <div class="member-card fade-in">
-                        <div class="member-card__photo">👤</div>
-                        <span class="member-card__role">Sales Director</span>
-                        <h3 class="member-card__name">宮本 恵太郎</h3>
-                        <p class="member-card__name-en">Keitaro Miyamoto</p>
-                        <p class="member-card__text">
-                            <!-- 制作メモ：経歴詳細は公式HPに記載なし。要確認。 -->
-                        </p>
-                    </div>
-
-                    <div class="member-card fade-in">
-                        <div class="member-card__photo">👤</div>
-                        <span class="member-card__role">Sales Director</span>
-                        <h3 class="member-card__name">北渡瀬 敦</h3>
-                        <p class="member-card__name-en">Atsushi Kitawatase</p>
-                        <p class="member-card__text">
-                            <!-- 制作メモ：経歴詳細は公式HPに記載なし。要確認。 -->
-                        </p>
-                    </div>
-                </div>
             </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="cta-section">
-            <div class="container">
-                <h2 class="cta-section__title">まずはお気軽にご相談ください</h2>
-                <p class="cta-section__text">私たちのチームが、貴社の事業成長に真剣に向き合います。</p>
-                <div class="btn-group">
-                    <a href="contact.html" class="btn btn--white btn--lg">無料相談</a>
-                    
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
     </main>
 
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer__inner">
                 <div>
-                    <div class="footer__brand"><img src="images/logo.svg" alt="MarchOn" class="footer__logo-img"></div>
+                    <div class="footer__brand"><img src="images/marchon-logo.png" alt="MarchOn"
+                            class="footer__logo-img"></div>
                     <p class="footer__tagline">新規事業開発支援のアルファドライブから<br>生まれた営業支援組織</p>
                 </div>
                 <div>

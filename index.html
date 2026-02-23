@@ -27,8 +27,17 @@
     <div class="header__inner">
       <a href="index.html" class="header__logo"><img src="images/header-logo-new.png" alt="MarchOn"></a>
       <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
-        <a href="index.html" class="header__nav-link header__nav-link--active">TOP</a>
-        <a href="about.html" class="header__nav-link">MarchOnとは</a>
+        <div class="header__nav-item">
+          <div class="header__nav-item"><a href="about.html" class="header__nav-link">MarchOnとは</a>
+            <div class="header__dropdown"><a href="vision.html" class="header__dropdown-link">Vision</a><a
+                href="value.html" class="header__dropdown-link">Value</a></div>
+          </div>
+          <div class="header__dropdown">
+
+            <a href="vision.html" class="header__dropdown-link">Vision</a>
+            <a href="value.html" class="header__dropdown-link">Value</a>
+          </div>
+        </div>
         <a href="service.html" class="header__nav-link">支援内容</a>
         <a href="works.html" class="header__nav-link">事例</a>
         <a href="member.html" class="header__nav-link">メンバー</a>
@@ -36,25 +45,27 @@
         <a href="company.html" class="header__nav-link">会社概要</a>
         <a href="contact.html" class="header__nav-link">お問い合わせ</a>
       </nav>
-      <div class="header__cta">
-        <a href="contact.html" class="btn btn--primary btn--sm" data-gtm-event="cta_header_click">無料相談</a>
-      </div>
       <button class="header__mobile-toggle" aria-label="メニューを開く" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
-  <nav class="mobile-nav" role="navigation" aria-label="モバイルナビゲーション">
-    <a href="index.html" class="mobile-nav__link">TOP</a>
-    <a href="about.html" class="mobile-nav__link">MarchOnとは</a>
-    <a href="service.html" class="mobile-nav__link">支援内容</a>
-    <a href="works.html" class="mobile-nav__link">事例</a>
-    <a href="member.html" class="mobile-nav__link">メンバー</a>
-    <a href="event.html" class="mobile-nav__link">イベント</a>
-    <a href="company.html" class="mobile-nav__link">会社概要</a>
-    <a href="contact.html" class="mobile-nav__link">お問い合わせ</a>
-    <div class="mobile-nav__cta">
-      <a href="contact.html" class="btn btn--primary btn--full">無料相談</a>
+  <nav class="mobile-nav" aria-label="モバイルナビゲーション">
+    <div class="mobile-nav__inner">
+      <div class="mobile-nav__item">
+        <a href="about.html" class="mobile-nav__link mobile-nav__link--has-sub">MarchOnとは</a>
+        <!-- JS handles tap to open/navigate -->
+        <div class="mobile-nav__dropdown">
+          <a href="vision.html" class="mobile-nav__dropdown-link">Vision</a>
+          <a href="value.html" class="mobile-nav__dropdown-link">Value</a>
+        </div>
+      </div>
+      <a href="service.html" class="mobile-nav__link">支援内容</a>
+      <a href="works.html" class="mobile-nav__link">事例</a>
+      <a href="member.html" class="mobile-nav__link">メンバー</a>
+      <a href="event.html" class="mobile-nav__link">イベント</a>
+      <a href="company.html" class="mobile-nav__link">会社概要</a>
+      <a href="contact.html" class="mobile-nav__link">お問い合わせ</a>
     </div>
   </nav>
 
@@ -89,34 +100,42 @@
     </section>
 
     <!-- ==================== -->
-    <!-- 2. VISION / VALUES   -->
+    <!-- 1.5. TOP ABOUT       -->
     <!-- ==================== -->
-    <section class="section" id="values">
+    <section class="section section--top-about" id="top-about">
       <div class="container">
-        <div class="section__header fade-in">
-          <div class="section__label">Values</div>
-          <h2 class="section__title">私たちが大切にしていること</h2>
-          <p class="section__subtitle">不確実な新規事業の世界で、確かな一歩を踏み出すために。</p>
-        </div>
-        <div class="values-grid">
-          <div class="value-card fade-in">
-            <div class="value-card__number">01</div>
-            <h3 class="value-card__title">不確実を言い訳にしない。</h3>
-            <p class="value-card__text">新規事業という不確定要素が多い中で「できない理由」を並べず、やり切る。やれるためにはどうしたらいいか、を考えます。</p>
+        <div class="top-about__inner">
+          <!-- Left: Text Content -->
+          <div class="top-about__content animate-on-scroll">
+            <span class="top-about__label">ABOUT</span>
+            <h2 class="top-about__title">
+              新規事業に特化した、<br>
+              営業伴走パートナー
+            </h2>
+            <p class="top-about__text">
+              企業を大きく前進させる新規事業。<br>
+              その可能性を、営業の力で確かな成長へと導く。
+            </p>
+            <div class="top-about__btn-group">
+              <a href="./vision.html" class="cta-pill">
+                <span>Vision</span>
+                <span class="cta-arrow">&gt;</span>
+              </a>
+              <a href="./value.html" class="cta-pill">
+                <span>Value</span>
+                <span class="cta-arrow">&gt;</span>
+              </a>
+            </div>
           </div>
-          <div class="value-card fade-in">
-            <div class="value-card__number">02</div>
-            <h3 class="value-card__title">過去にしがみつかない。</h3>
-            <p class="value-card__text">過去のやり方、成功体験にばかりしがみつかず、時代と顧客に合ったやり方を常に模索し最大パフォーマンスを発揮します。</p>
-          </div>
-          <div class="value-card fade-in">
-            <div class="value-card__number">03</div>
-            <h3 class="value-card__title">歩みを止めない。</h3>
-            <p class="value-card__text">常に頭を動かす、手足を動かすことで、仮説検証を高速で回し続け、事業成長に全身全霊で寄与します。</p>
+
+          <!-- Right: Giant Visual Text -->
+          <div class="top-about__visual animate-on-scroll">
+            <div class="top-about__giant-text">PARTNER</div>
           </div>
         </div>
       </div>
     </section>
+
 
     <!-- ==================== -->
     <!-- 3. STRENGTH / 特徴   -->
@@ -296,7 +315,7 @@
           <h2 class="section__title">チームメンバー</h2>
           <p class="section__subtitle">新規事業の現場を知るプロフェッショナルが、あなたの事業に伴走します。</p>
         </div>
-        <div class="member-grid fade-in" style="grid-template-columns: repeat(5, 1fr);">
+        <div class="member-grid fade-in">
           <div class="member-card">
             <div class="member-card__photo">👤</div>
             <span class="member-card__role">CEO</span>
@@ -380,7 +399,7 @@
     <div class="container">
       <div class="footer__inner">
         <div>
-          <div class="footer__brand"><img src="images/logo.svg" alt="MarchOn" class="footer__logo-img"></div>
+          <div class="footer__brand"><img src="images/marchon-logo.png" alt="MarchOn" class="footer__logo-img"></div>
           <p class="footer__tagline">新規事業開発支援のアルファドライブから<br>生まれた営業支援組織</p>
         </div>
         <div>

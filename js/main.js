@@ -17,6 +17,50 @@ if (document.readyState === 'loading') {
   init();
 }
 
+/* --- Header Dropdown (SP Tap Support) --- */
+const navItems = document.querySelectorAll('.header__nav-item, .mobile-nav__item');
+
+navItems.forEach(item => {
+  // Determine the link class based on the container
+  const linkClass = item.classList.contains('mobile-nav__item') ? '.mobile-nav__link' : '.header__nav-link';
+  const link = item.querySelector(linkClass);
+
+  if (link) {
+    link.addEventListener('click', function (e) {
+      // Only prevent default on touch devices (or small screens) if not already open
+      // We use a simple check: if the dropdown is not visible via hover (which we can't easily check in JS without matchMedia),
+      // we rely on the 'is-open' class toggling.
+      // However, user specifically asked: "1st tap open, 2nd tap navigate".
+
+      // Check if we are in a "touch" context or simply enforce this logic globally for this item?
+      // The Requirement says "SPでは" (on SP).
+      // Let's use window width or touch capability check.
+      const isMobileOrTablet = window.matchMedia('(max-width: 1024px)').matches || ('ontouchstart' in window);
+
+      if (isMobileOrTablet) {
+        if (!item.classList.contains('is-open')) {
+          e.preventDefault(); // Prevent navigation
+          // Close other open dropdowns if any
+          navItems.forEach(other => {
+            if (other !== item) other.classList.remove('is-open');
+          });
+          item.classList.add('is-open'); // Open this one
+        } else {
+          // Already open, allow default (navigation)
+          // No e.preventDefault()
+        }
+      }
+    });
+  }
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function (e) {
+  if (!e.target.closest('.header__nav-item')) {
+    navItems.forEach(item => item.classList.remove('is-open'));
+  }
+});
+
 /* --- Hero Animations (New) --- */
 function initHeroAnimations() {
   const reveal1 = document.getElementById('reveal-1');
