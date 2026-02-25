@@ -27,7 +27,7 @@
     <div class="header__inner">
       <a href="index.html" class="header__logo"><img src="images/header-logo-new.png" alt="MarchOn"></a>
       <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
-                <div class="header__nav-item header__nav-item--mega">
+        <div class="header__nav-item header__nav-item--mega">
           <a href="about.html" class="header__nav-link">MarchOnとは</a>
           <div class="header__mega-menu">
             <div class="header__mega-inner">
@@ -227,34 +227,71 @@
     <!-- ==================== -->
     <!-- 4. SERVICE 導線       -->
     <!-- ==================== -->
-    <section class="section" id="service-overview">
+    <section class="section section--roadmap" id="service-overview"
+      style="position: relative; overflow: hidden; z-index: 1;">
+      <!-- 巨大背景テキスト（SERVICE） -->
+      <div class="roadmap-bg-text" aria-hidden="true"
+        style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: clamp(10rem, 25vw, 24rem); font-weight: 900; color: var(--color-text); opacity: 0.04; line-height: 1; pointer-events: none; z-index: -1; white-space: nowrap; letter-spacing: -0.02em;">
+        SERVICE
+      </div>
+
       <div class="container">
         <div class="section__header fade-in">
-          <div class="section__label">Service</div>
-          <h2 class="section__title">ご支援領域</h2>
+          <div class="section__label"
+            style="letter-spacing: 0.1em; color: var(--color-primary); font-size: 14px; font-weight: 800; margin-bottom: 8px;">
+            SERVICE</div>
+          <h2 class="section__title" style="font-weight: 800; font-size: var(--text-3xl);">ご支援領域</h2>
           <p class="section__subtitle">セールス戦略の立案から、アプローチ・クロージングまでの実行、そして組織への定着まで、一気通貫でご支援します。</p>
         </div>
 
-        <div class="phase-flow fade-in">
-          <div class="phase-item">
-            <div class="phase-item__number">1</div>
-            <h3 class="phase-item__title">戦略設計</h3>
-            <p class="phase-item__text">KGI・KPI設計、ターゲット設定、営業戦略の策定</p>
+        <div class="roadmap-cards fade-in">
+          <!-- Step 1 -->
+          <div class="roadmap-card">
+            <div class="roadmap-card__badge">
+              <span class="roadmap-card__num">01</span>
+              <span class="roadmap-card__label">PHASE</span>
+            </div>
+            <h3 class="roadmap-card__title">戦略設計</h3>
+            <p class="roadmap-card__text">KGI・KPI設計、ターゲット設定、営業戦略の策定</p>
           </div>
-          <div class="phase-item">
-            <div class="phase-item__number">2</div>
-            <h3 class="phase-item__title">戦略運用</h3>
-            <p class="phase-item__text">アプローチ実行、商談代行、仮説検証サイクル</p>
+
+          <!-- Connector -->
+          <div class="roadmap-connector">
+            <div class="roadmap-connector__line"></div>
+            <div class="roadmap-connector__arrow">›</div>
           </div>
-          <div class="phase-item">
-            <div class="phase-item__number">3</div>
-            <h3 class="phase-item__title">運用定着</h3>
-            <p class="phase-item__text">営業管理フロー構築、育成研修、組織への定着</p>
+
+          <!-- Step 2 -->
+          <div class="roadmap-card">
+            <div class="roadmap-card__badge">
+              <span class="roadmap-card__num">02</span>
+              <span class="roadmap-card__label">PHASE</span>
+            </div>
+            <h3 class="roadmap-card__title">戦略運用</h3>
+            <p class="roadmap-card__text">アプローチ実行、商談代行、仮説検証サイクル</p>
+          </div>
+
+          <!-- Connector -->
+          <div class="roadmap-connector">
+            <div class="roadmap-connector__line"></div>
+            <div class="roadmap-connector__arrow">›</div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="roadmap-card">
+            <div class="roadmap-card__badge">
+              <span class="roadmap-card__num">03</span>
+              <span class="roadmap-card__label">PHASE</span>
+            </div>
+            <h3 class="roadmap-card__title">運用定着</h3>
+            <p class="roadmap-card__text">営業管理フロー構築、育成研修、組織への定着</p>
           </div>
         </div>
 
-        <div style="text-align:center;" class="fade-in">
-          <a href="service.html" class="btn btn--primary" data-gtm-event="cta_service_detail">支援内容を詳しく見る →</a>
+        <div style="text-align:center; margin-top: var(--space-2xl);" class="fade-in">
+          <a href="service.html" class="btn btn--primary btn--roadmap" data-gtm-event="cta_service_detail">
+            支援内容を詳しく見る <span style="margin-left: 8px;">→</span>
+          </a>
         </div>
       </div>
     </section>
