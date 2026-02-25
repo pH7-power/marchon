@@ -10,6 +10,7 @@
     <meta name="keywords" content="新規事業 営業支援, 事業伴走 支援, 新規事業 立ち上げ, 営業戦略">
     <meta property="og:title" content="MarchOnとは｜新規事業×営業支援の特徴">
     <meta property="og:description" content="新規事業にこそ「営業力」が必須。戦略構築力と事業開発力を兼ね備えた営業支援組織。">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -19,11 +20,23 @@
         <div class="header__inner">
             <a href="index.html" class="header__logo"><img src="images/header-logo-new.png" alt="MarchOn"></a>
             <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
-                <div class="header__nav-item">
+                <div class="header__nav-item header__nav-item--mega">
                     <a href="about.html" class="header__nav-link header__nav-link--active">MarchOnとは</a>
-                    <div class="header__dropdown">
-                        <a href="vision.html" class="header__dropdown-link">Vision</a>
-                        <a href="value.html" class="header__dropdown-link">Value</a>
+                    <div class="header__mega-menu">
+                        <div class="header__mega-inner">
+                            <a href="about.html" class="header__mega-link" aria-current="page">
+                                <span class="header__mega-text">MarchOnとは</span>
+                                <span class="header__mega-arrow">›</span>
+                            </a>
+                            <a href="vision.html" class="header__mega-link">
+                                <span class="header__mega-text">Vision</span>
+                                <span class="header__mega-arrow">›</span>
+                            </a>
+                            <a href="value.html" class="header__mega-link">
+                                <span class="header__mega-text">Value</span>
+                                <span class="header__mega-arrow">›</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <a href="service.html" class="header__nav-link">支援内容</a>
@@ -59,115 +72,98 @@
         </div>
     </nav>
 
-    <div class="page-header">
-        <div class="container text-center">
-
-            <h1 class="page-header__title">MarchOnとは</h1>
-            <p class="page-header__description">
-                新規事業にこそ、「営業力」が必須。<br>私たちは、その信念から生まれた営業支援組織です。</p>
+    <!-- Hero / Mission -->
+    <section class="hero-video hero-video--about">
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="images/ビジネス街のビル動画.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="hero-content fade-in">
+            <span class="hero-content__label">MarchOnとは</span>
+            <h1>
+                新規事業にこそ、<br>
+                <span class="highlight">「営業力」</span>が必須
+            </h1>
+            <div class="hero-text">
+                <p>我々は、新規事業開発の総合支援カンパニーである株式会社アルファドライブの子会社です。</p>
+                <p>これまで数多くの新規事業をご支援する中で、事業が進まない・成長しない原因は多くが営業活動の強度不足、やり方が分からないというものでした。</p>
+                <p>そこで我々は、事業会社で営業を経験してきた仲間を集め、営業支援に特化した株式会社MarchOnを設立しました。</p>
+                <p>新規事業のみならず、あらゆる営業活動でお困りの皆さんのアクセルを踏む一助となれるよう、全力で営業支援を行います。</p>
+            </div>
         </div>
-    </div>
 
-    <!-- Mission -->
-    <section class="section section--mission">
-        <div class="container container--narrow">
-            <div class="fade-in" style="text-align: center; margin-bottom: var(--space-3xl);">
-                <h2 class="section__title" style="margin-bottom: var(--space-xl);">新規事業にこそ、<br>「営業力」が必須</h2>
-            </div>
-            <div class="fade-in" style="max-width: 720px; margin: 0 auto;">
-                <p
-                    style="font-size: var(--text-lg); line-height: var(--leading-relaxed); margin-bottom: var(--space-xl);">
-                    誰とでもすぐにコミュニケーションが取れ、あらゆる情報にアクセスできるこの時代。それでもなお、いや、だからこそ、時には地道な営業活動が大きな力を発揮すると我々は信じています。
-                </p>
-                <p
-                    style="font-size: var(--text-lg); line-height: var(--leading-relaxed); margin-bottom: var(--space-xl);">
-                    MarchOnチームは、株式会社アルファドライブの子会社として新規事業領域においての知見を生かし、セールスの力であらゆる事業の成長を後押しする組織です。
-                </p>
-                <p style="font-size: var(--text-lg); line-height: var(--leading-relaxed);">
-                    手法は問わず、VUCAの時代を生き抜く「地力」をあらゆる事業に装着することを目指しています。
-                </p>
-            </div>
+        <!-- Seamless Transition Decorator -->
+        <div class="scroll-indicator">
+            <span>Scroll</span>
         </div>
     </section>
 
-    <!-- Features -->
-    <section class="section section--alt">
-        <div class="container">
+    <!-- Features Slider Section -->
+    <section class="section section--alt section--feature-slider">
+        <!-- 巨大薄文字背景 -->
+        <div class="feature-slider__bg-text" aria-hidden="true">03 FEATURES</div>
+
+        <div class="container container--feature-slider">
             <div class="section__header fade-in">
-                <div class="section__label">Feature</div>
-                <h2 class="section__title">MarchOnの特徴</h2>
-                <p class="section__subtitle">戦略策定から営業実行、そして組織への定着まで。<br>新規事業に必要な営業力を、3つの強みでご支援します。</p>
+                <div class="section__label section__label--sharp">FEATURE</div>
+                <h2 class="section__title section__title--sharp">MarchOnの特徴</h2>
             </div>
 
-            <div class="grid grid--3">
-                <div class="card fade-in">
-                    <div class="card__icon-wrapper">
-                        <div class="card__icon">🎯</div>
+            <!-- Swiper Container -->
+            <div class="swiper feature-swiper fade-in">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide feature-slide">
+                        <div class="feature-slide__inner">
+                            <!-- Removed Icon -->
+                            <h3 class="feature-slide__title">ディレクション</h3>
+                            <p class="feature-slide__text">
+                                ディレクターとして各種戦略策定やプロジェクトを管理するメンバーはこれまで、事業会社もしくはアルファドライブにて数多くの新規事業に関わってきました。戦略構築力、事業開発力が高い人材が揃っており、商材ごとに最適な戦略を描くことができます。
+                            </p>
+                        </div>
                     </div>
-                    <h3 class="card__title">新規事業×営業経験者による<br>ディレクション</h3>
-                    <p class="card__text">
-                        ディレクターとして各種戦略策定やプロジェクトを管理するメンバーはこれまで、事業会社もしくはアルファドライブにて数多くの新規事業に関わってきました。戦略構築力、事業開発力が高い人材が揃っており、商材ごとに最適な戦略を描くことができます。
-                    </p>
-                </div>
-                <div class="card fade-in">
-                    <div class="card__icon-wrapper">
-                        <div class="card__icon">📈</div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide feature-slide">
+                        <div class="feature-slide__inner">
+                            <!-- Removed Icon -->
+                            <h3 class="feature-slide__title">仮説アップデート</h3>
+                            <p class="feature-slide__text">
+                                不確実な新規事業だからこそ、常に仮説を持ちながら営業活動を行うことを大切にしています。営業を行う中で当初の仮説が違った場合でも、すぐさま新たな仮説を立てて営業活動を行うため、その質は活動をする度に向上していき、結果につながります。
+                            </p>
+                        </div>
                     </div>
-                    <h3 class="card__title">仮説アップデートによる<br>営業の質向上</h3>
-                    <p class="card__text">
-                        不確実な新規事業だからこそ、常に仮説を持ちながら営業活動を行うことを大切にしています。営業を行う中で当初の仮説が違った場合でも、すぐさま新たな仮説を立てて営業活動を行うため、その質は活動をする度に向上していき、結果につながります。
-                    </p>
-                </div>
-                <div class="card fade-in">
-                    <div class="card__icon-wrapper">
-                        <div class="card__icon">⚡</div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide feature-slide">
+                        <div class="feature-slide__inner">
+                            <!-- Removed Icon -->
+                            <h3 class="feature-slide__title">圧倒的行動量</h3>
+                            <p class="feature-slide__text">
+                                不確実な新規事業においては、「断られる」ことの方が多く、慣れていなければメンタル・リソース共に苦しい状態に陥りがちです。我々はBtoB/BtoC問わず様々なアプローチを経験してきた社員やパートナーとともに泥臭い手段であろうとも行動量を担保しながら営業活動を進めます。
+                            </p>
+                        </div>
                     </div>
-                    <h3 class="card__title">泥臭いアプローチ<br>圧倒的な行動量</h3>
-                    <p class="card__text">
-                        不確実な新規事業においては、「断られる」ことの方が多く、慣れていなければメンタル・リソース共に苦しい状態に陥りがちです。我々はBtoB/BtoC問わず様々なアプローチを経験してきた社員やパートナーとともに泥臭い手段であろうとも行動量を担保しながら営業活動を進めます。
-                    </p>
                 </div>
+
+                <!-- Navigation -->
+                <div class="swiper-button-prev feature-swiper-prev"></div>
+                <div class="swiper-button-next feature-swiper-next"></div>
+
+                <!-- Pagination -->
+                <div class="swiper-pagination feature-swiper-pagination"></div>
             </div>
         </div>
     </section>
 
-    <!-- Values (同一データ) -->
-    <section class="section">
-        <div class="container">
-            <div class="section__header fade-in">
-                <div class="section__label">Values</div>
-                <h2 class="section__title">私たちが大切にしていること</h2>
-            </div>
-
-            <div class="values-grid">
-                <div class="value-card fade-in">
-                    <div class="value-card__number">01</div>
-                    <h3 class="value-card__title">不確実を言い訳にしない。</h3>
-                    <p class="value-card__text">新規事業という不確定要素が多い中で「できない理由」を並べず、やり切る。やれるためにはどうしたらいいか、を考えます。</p>
-                </div>
-                <div class="value-card fade-in">
-                    <div class="value-card__number">02</div>
-                    <h3 class="value-card__title">過去にしがみつかない。</h3>
-                    <p class="value-card__text">過去のやり方、成功体験にばかりしがみつかず、時代と顧客に合ったやり方を常に模索し最大パフォーマンスを発揮します。</p>
-                </div>
-                <div class="value-card fade-in">
-                    <div class="value-card__number">03</div>
-                    <h3 class="value-card__title">歩みを止めない。</h3>
-                    <p class="value-card__text">常に頭を動かす、手足を動かすことで、仮説検証を高速で回し続け、事業成長に全身全霊で寄与します。</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- CTA -->
     <section class="cta-final animate-on-scroll-custom" id="cta">
-      <div class="cta-final__inner">
-        <h2 class="cta-final__title">まずはお気軽にご相談ください</h2>
-        <p class="cta-final__text">
-          新規事業の営業に関するお悩みやご相談を、<br>私たちにお聞かせください。
-        </p>
-        <a href="contact.html" class="cta-final__btn" data-gtm-event="cta_bottom_free_consultation">無料相談</a>
-      </div>
+        <div class="cta-final__inner">
+            <h2 class="cta-final__title">まずはお気軽にご相談ください</h2>
+            <p class="cta-final__text">
+                新規事業の営業に関するお悩みやご相談を、<br>私たちにお聞かせください。
+            </p>
+            <a href="contact.html" class="cta-final__btn" data-gtm-event="cta_bottom_free_consultation">無料相談</a>
+        </div>
     </section>
     </main>
 
@@ -208,7 +204,14 @@
             </div>
         </div>
     </footer>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        const v = document.querySelector(".bg-video");
+        if (v) v.playbackRate = 1.8;
+    </script>
 </body>
 
 </html>

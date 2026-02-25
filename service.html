@@ -19,10 +19,23 @@
         <div class="header__inner">
             <a href="index.html" class="header__logo"><img src="images/header-logo-new.png" alt="MarchOn"></a>
             <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
-                <div class="header__nav-item"><a href="about.html" class="header__nav-link">MarchOnとは</a>
-                    <div class="header__dropdown">
-                        <a href="vision.html" class="header__dropdown-link">Vision</a>
-                        <a href="value.html" class="header__dropdown-link">Value</a>
+                <div class="header__nav-item header__nav-item--mega">
+                    <a href="about.html" class="header__nav-link">MarchOnとは</a>
+                    <div class="header__mega-menu">
+                        <div class="header__mega-inner">
+                            <a href="about.html" class="header__mega-link">
+                                <span class="header__mega-text">MarchOnとは</span>
+                                <span class="header__mega-arrow">›</span>
+                            </a>
+                            <a href="vision.html" class="header__mega-link">
+                                <span class="header__mega-text">Vision</span>
+                                <span class="header__mega-arrow">›</span>
+                            </a>
+                            <a href="value.html" class="header__mega-link">
+                                <span class="header__mega-text">Value</span>
+                                <span class="header__mega-arrow">›</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <a href="service.html" class="header__nav-link header__nav-link--active">支援内容</a>
@@ -75,21 +88,27 @@
                 <p class="section__subtitle">事業フェーズに応じて、必要なご支援を柔軟に組み合わせます。<br>特定のフェーズだけのご依頼も承ります。</p>
             </div>
 
-            <div class="phase-flow fade-in">
-                <div class="phase-item">
-                    <div class="phase-item__number">1</div>
-                    <h3 class="phase-item__title">戦略設計</h3>
-                    <p class="phase-item__text">KGI・KPI設計、ターゲット設定、提供価値の整理など、営業活動の前提となる戦略を策定します。</p>
+            <div class="roadmap-flow fade-in">
+                <div class="roadmap-step">
+                    <div class="roadmap-step__bg-number">01</div>
+                    <div class="roadmap-step__header">
+                        <h3 class="roadmap-step__title">戦略設計</h3>
+                    </div>
+                    <p class="roadmap-step__text">KGI・KPI設計、ターゲット設定、提供価値の整理など、営業活動の前提となる戦略を策定します。</p>
                 </div>
-                <div class="phase-item">
-                    <div class="phase-item__number">2</div>
-                    <h3 class="phase-item__title">戦略運用</h3>
-                    <p class="phase-item__text">策定した戦略に基づき、アプローチ実行・商談代行を行い、仮説検証サイクルを回します。</p>
+                <div class="roadmap-step">
+                    <div class="roadmap-step__bg-number">02</div>
+                    <div class="roadmap-step__header">
+                        <h3 class="roadmap-step__title">戦略運用</h3>
+                    </div>
+                    <p class="roadmap-step__text">策定した戦略に基づき、アプローチ実行・商談代行を行い、仮説検証サイクルを回します。</p>
                 </div>
-                <div class="phase-item">
-                    <div class="phase-item__number">3</div>
-                    <h3 class="phase-item__title">運用定着</h3>
-                    <p class="phase-item__text">営業管理フローの構築や育成研修を通じて、営業の仕組みを貴社組織に定着させます。</p>
+                <div class="roadmap-step">
+                    <div class="roadmap-step__bg-number">03</div>
+                    <div class="roadmap-step__header">
+                        <h3 class="roadmap-step__title">運用定着</h3>
+                    </div>
+                    <p class="roadmap-step__text">営業管理フローの構築や育成研修を通じて、営業の仕組みを貴社組織に定着させます。</p>
                 </div>
             </div>
         </div>
@@ -106,37 +125,37 @@
 
             <div class="service-grid">
                 <div class="service-card fade-in">
-                    <div class="service-card__icon">📋</div>
+                    <div class="service-card__label">SERVICE 01</div>
                     <h3 class="service-card__title">営業戦略立案</h3>
                     <p class="service-card__text">
                         KGI・KPI設計、ターゲット設定、提供価値など初期に必要な戦略を策定します。事業の方向性とマーケットの特性を踏まえた、実行可能な戦略をご一緒に描きます。</p>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-card__icon">📑</div>
+                    <div class="service-card__label">SERVICE 02</div>
                     <h3 class="service-card__title">営業資料作成</h3>
                     <p class="service-card__text">
                         デザインも含め「伝わる」営業資料を作り上げます。ターゲットの課題感に合わせたストーリー設計から、視覚的に分かりやすい資料の制作まで対応します。</p>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-card__icon">📞</div>
+                    <div class="service-card__label">SERVICE 03</div>
                     <h3 class="service-card__title">アプローチ・商談代行</h3>
                     <p class="service-card__text">
                         フォーム・架電・手紙、オンライン・オフライン問わず行動量を担保します。BtoB/BtoCいずれのアプローチにも対応し、商談獲得・クロージングまでをご支援します。</p>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-card__icon">📊</div>
+                    <div class="service-card__label">SERVICE 04</div>
                     <h3 class="service-card__title">営業管理フロー構築</h3>
                     <p class="service-card__text">
                         スプレッドシート等の既存ツールで管理できる枠組みを構築します。特別なシステム導入なしに営業活動を可視化し、PDCAを回せる仕組みを整えます。</p>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-card__icon">🎓</div>
+                    <div class="service-card__label">SERVICE 05</div>
                     <h3 class="service-card__title">営業力育成研修</h3>
                     <p class="service-card__text">
                         BtoB営業の注意点や心構え、現場で使えるテクニックを伝授します。座学だけでなく、貴社商材を題材にしたロールプレイングも対面・オンラインで対応します。</p>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-card__icon">🏛️</div>
+                    <div class="service-card__label">SERVICE 06</div>
                     <h3 class="service-card__title">展示会支援</h3>
                     <p class="service-card__text">
                         リード獲得から商談獲得までをまるっと支援します。展示会当日のブース対応はもちろん、事前準備から事後フォローまで一貫した支援を行います。</p>
@@ -180,13 +199,13 @@
 
     <!-- CTA -->
     <section class="cta-final animate-on-scroll-custom" id="cta">
-      <div class="cta-final__inner">
-        <h2 class="cta-final__title">まずはお気軽にご相談ください</h2>
-        <p class="cta-final__text">
-          新規事業の営業に関するお悩みやご相談を、<br>私たちにお聞かせください。
-        </p>
-        <a href="contact.html" class="cta-final__btn" data-gtm-event="cta_bottom_free_consultation">無料相談</a>
-      </div>
+        <div class="cta-final__inner">
+            <h2 class="cta-final__title">まずはお気軽にご相談ください</h2>
+            <p class="cta-final__text">
+                新規事業の営業に関するお悩みやご相談を、<br>私たちにお聞かせください。
+            </p>
+            <a href="contact.html" class="cta-final__btn" data-gtm-event="cta_bottom_free_consultation">無料相談</a>
+        </div>
     </section>
     </main>
 

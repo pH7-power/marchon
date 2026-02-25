@@ -10,6 +10,7 @@ const init = () => {
   initHeroAnimations();
   initStrengthTabs();
   initVisionAnimations();
+  initFeatureSlider();
 };
 
 if (document.readyState === 'loading') {
@@ -57,8 +58,18 @@ navItems.forEach(item => {
 
 // Close dropdown when clicking outside
 document.addEventListener('click', function (e) {
-  if (!e.target.closest('.header__nav-item')) {
+  if (!e.target.closest('.header__nav-item') && !e.target.closest('.mobile-nav__item')) {
     navItems.forEach(item => item.classList.remove('is-open'));
+  }
+});
+
+// Close dropdown on Escape key (Keyboard accessibility)
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    navItems.forEach(item => item.classList.remove('is-open'));
+    if (document.activeElement && document.activeElement.closest('.header__nav-item')) {
+      document.activeElement.blur(); // Remove focus to close :focus-within megamenu
+    }
   }
 });
 
@@ -502,5 +513,48 @@ function initMemberAccordion() {
         details.setAttribute('aria-hidden', isExpanded ? 'true' : 'false');
       }
     });
+  });
+}
+
+/* --- Feature Slider (Swiper) --- */
+function initFeatureSlider() {
+  if (typeof Swiper === 'undefined' || !document.querySelector('.feature-swiper')) return;
+
+  new Swiper('.feature-swiper', {
+    // Optional parameters
+    loop: false,
+    speed: 600, // Slightly slower for elegance
+    grabCursor: true, // Show grab cursor for drag interaction
+    spaceBetween: 24, // Gap between cards
+
+    // PC: Show 1 card fully, peek exactly next/prev cards
+    slidesPerView: 1.1,
+    centeredSlides: true,
+
+    // If we need pagination
+    pagination: {
+      el: '.feature-swiper-pagination',
+      clickable: true,
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.feature-swiper-next',
+      prevEl: '.feature-swiper-prev',
+    },
+
+    // Responsive breakpoints
+    breakpoints: {
+      // when window width is >= 768px (Tablet / PC)
+      768: {
+        slidesPerView: 1.5,
+        spaceBetween: 40
+      },
+      // when window width is >= 1024px (Large PC)
+      1024: {
+        slidesPerView: 2.2, // Show more of the side cards
+        spaceBetween: 48
+      }
+    }
   });
 }
