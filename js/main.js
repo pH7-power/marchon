@@ -328,7 +328,7 @@ function getCTASectionHTML() {
       <div class="cta-final__inner">
         <h2 class="cta-final__title">まずはお気軽にご相談ください</h2>
         <p class="cta-final__text">
-          新規事業の営業に関するお悩みやご相談を、<br>私たちにお聞かせください。
+          <span class="cta-final__text-line">新規事業の営業に関するお悩みやご相談を、</span><br><span class="cta-final__text-line">私たちにお聞かせください。</span>
         </p>
         <a href="contact.html" class="cta-final__btn" data-gtm-event="cta_bottom_free_consultation">無料相談</a>
       </div>
